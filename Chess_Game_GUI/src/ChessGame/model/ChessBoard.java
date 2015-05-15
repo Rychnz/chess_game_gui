@@ -35,7 +35,6 @@ public class ChessBoard {
         draw();
         
         playGame();
-        //draw();
     }
     
     /**
