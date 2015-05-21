@@ -34,8 +34,11 @@ public class ChessBoard {
         placePieces();
         //draw();
         
-        //playGame();
-        //draw();
+
+        
+
+        playGame();
+
     }
     
     /**
