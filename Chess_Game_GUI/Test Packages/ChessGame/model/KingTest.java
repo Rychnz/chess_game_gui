@@ -6,6 +6,7 @@
 package ChessGame.model;
 
 
+import java.awt.Color;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -23,7 +24,7 @@ public class KingTest {
     private King king;
     private ChessBoard board;
     private Position position;
-    private Set<Position> possibleMoves;
+    private Set<Square> possibleMoves;
     
     
     public KingTest() {
@@ -31,9 +32,9 @@ public class KingTest {
     
     @Before
     public void setUp() {
-        board = new ChessBoard(7,7);
-        position = new Position(board, 1, 1);
-        king = new King(board);
+        board = new ChessBoard();
+        position = new Position(board, 3, 3);
+        king = new King(Color.WHITE);
         king.setPosition(position);
         possibleMoves = king.movesPossible();
     }
@@ -58,14 +59,24 @@ public class KingTest {
      * Test of movesPossible method, of class King.
      */
     @Test
-    public void testMovesPossible() {
-        Position forward = new Position(board, 2, 1);
-        Position[] test = possibleMoves.toArray(new Position[possibleMoves.size()]);
-        assertEquals(test[0].getRow(), forward.getRow());
-        assertEquals(test[0].getColumn(), forward.getColumn());
-        assertEquals(test[0].getBoard(), forward.getBoard());
-        
-        //assertEquals(test[0], forward);
+    public void testMovesPossibleAllPossibleMoves() {
+        Position forward = new Position(board, 4, 3);
+        Position right = new Position(board, 3, 2);
+        Position left = new Position(board, 3, 4);
+        Position backwards = new Position(board, 2, 3);
+        assertTrue(possibleMoves.contains(board.getSquare(forward)));
+        assertTrue(possibleMoves.contains(board.getSquare(right)));
+        assertTrue(possibleMoves.contains(board.getSquare(left)));
+        assertTrue(possibleMoves.contains(board.getSquare(backwards)));
+    }
+    
+    /**
+     * Test of movesPossible, invalid moves
+     */
+    @Test
+    public void testMovesPossibleInvalidMoves() {
+        Position randomOne = new Position(board, 6, 6);
+        assertFalse(possibleMoves.contains(board.getSquare(randomOne)));
     }
     
 }

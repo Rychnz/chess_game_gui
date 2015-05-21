@@ -32,9 +32,9 @@ public class ChessBoard {
         squares = new Square[numRows][numColumns];
         buildChessBoard();
         placePieces();
-        draw();
+        //draw();
         
-        playGame();
+        //playGame();
         //draw();
     }
     
@@ -67,7 +67,7 @@ public class ChessBoard {
             Piece p;
             p = this.getSquare(pos).getPiece();
             movePiece(squares[rowNo][colNo], squares[newRowNo][newColNo], p);
-            draw();
+            //draw();
             
             System.out.println("Do you want to keep playing? Type Y or N");
             String cp = lineRead.next();
@@ -224,35 +224,35 @@ public class ChessBoard {
             pawn.setPosition(pos);
         }
         
-        Piece rook = new Rook();
+        Piece rook = new Rook(Color.WHITE);
         Position pos = new Position(this, 0, 0);
         getSquare(pos).addPiece(rook);
         
-        Piece rook3 = new Rook();
+        Piece rook3 = new Rook(Color.WHITE);
         Position pos3 = new Position(this, 7, 0);
         getSquare(pos3).addPiece(rook);
         
-        Piece rook4 = new Rook();
+        Piece rook4 = new Rook(Color.BLACK);
         Position pos4 = new Position(this, 0, 7);
         getSquare(pos4).addPiece(rook);
         
-        Piece rook2 = new Rook();
+        Piece rook2 = new Rook(Color.BLACK);
         Position pos1 = new Position(this, 7, 7);
         getSquare(pos1).addPiece(rook2);
         
-        Piece knight = new Knight();
+        Piece knight = new Knight(Color.WHITE);
         Position pos5 = new Position(this, 0, 1);
         getSquare(pos5).addPiece(knight);
         
-        Piece knight2 = new Knight();
+        Piece knight2 = new Knight(Color.WHITE);
         Position pos6 = new Position(this, 0, 6);
         getSquare(pos6).addPiece(knight);
         
-        Piece knight3 = new Knight();
+        Piece knight3 = new Knight(Color.BLACK);
         Position pos7 = new Position(this, 7, 1);
         getSquare(pos7).addPiece(knight);
         
-        Piece knight4 = new Knight();
+        Piece knight4 = new Knight(Color.BLACK);
         Position pos8 = new Position(this, 7, 6);
         getSquare(pos8).addPiece(knight);
         
@@ -269,7 +269,7 @@ public class ChessBoard {
         Position pos12 = new Position(this, 7, 5);
         getSquare(pos12).addPiece(bishop);
         
-        Piece king = new King();
+        Piece king = new King(Color.WHITE);
         Position pos13 = new Position(this, 0, 3);
         getSquare(pos13).addPiece(king);
         
@@ -277,7 +277,7 @@ public class ChessBoard {
         Position pos14 = new Position(this, 0, 4);
         getSquare(pos14).addPiece(queen);
         
-        Piece king2 = new King();
+        Piece king2 = new King(Color.BLACK);
         Position pos15 = new Position(this, 7, 4);
         getSquare(pos15).addPiece(king2);
         

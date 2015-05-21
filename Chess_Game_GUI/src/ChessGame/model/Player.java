@@ -11,7 +11,13 @@ package ChessGame.model;
  */
 public class Player {
     
+    int score;
+    int gamesWon;
+    int gamesLost;
+    int gamesPlayed;
+    
     String playerName;
+    
     /**
      * Default constructor for class Player - requires a String!
      * 
@@ -19,17 +25,57 @@ public class Player {
      */
     public Player(String name) {
         playerName = name;
+        gamesWon = 0;
+        gamesLost = 0;
+        gamesPlayed = 0;
+        score = 0;
     }
     
     /**
      * Get playerName method
      * 
-     * Returns name of respective player
+     * @Returns name of respective player
     */
     public String getPlayerName() {
         if(playerName == null)
             return "Player does not have a name yet!";
         return playerName;
+    }
+    
+    /**
+     * Sets score of player
+     * 
+     * @param newScore
+     */
+    public void setScore(int newScore) {
+        score = newScore;
+    }
+    
+    /**
+     * Sets games won
+     * 
+     * @param newGamesWon
+     */
+    public void setGamesWon(int newGamesWon) {
+        gamesWon = newGamesWon;
+    }
+    
+    /**
+     * Sets games lost
+     * 
+     * @param newGamesLost
+     */
+    public void setGamesLost(int newGamesLost) {
+        gamesLost = newGamesLost;
+    }
+    
+    /**
+     * Set games played
+     * 
+     * @param newGamesPlayed
+     */
+    public void setGamesPlayed(int newGamesPlayed) {
+        gamesPlayed = newGamesPlayed;
     }
 }
 

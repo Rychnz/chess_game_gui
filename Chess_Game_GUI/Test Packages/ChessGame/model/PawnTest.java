@@ -5,6 +5,7 @@
  */
 package ChessGame.model;
 
+import java.awt.Color;
 import java.util.Set;
 import org.junit.After;
 import org.junit.Before;
@@ -21,8 +22,8 @@ public class PawnTest {
     private Pawn pawnWithPosition;
     private ChessBoard board;
     private Position position, position2;
-    private Set<Position> possibleMoves;
-    private Set<Position> possibleMoves2;
+    private Set<Square> possibleMoves;
+    private Set<Square> possibleMoves2;
     
     
     public PawnTest() {
@@ -37,13 +38,14 @@ public class PawnTest {
     public void setUp() {
         
         
-        board = new ChessBoard(7,7);
+        board = new ChessBoard();
         position = new Position(board, 1, 1);
         position2 = new Position(board, 6, 6);
         
-        pawnWithPosition = new Pawn();
-        pawn = new Pawn();
+        pawnWithPosition = new Pawn(Color.WHITE);
+        pawn = new Pawn(Color.WHITE);
         pawnWithPosition.setPosition(position);
+        
         
         possibleMoves2 = pawnWithPosition.movesPossible();
     }
@@ -75,16 +77,31 @@ public class PawnTest {
 
     /**
      * Test of movesPossible method, of class Pawn.
+     * 
+     * Tests a scenario with a valid move
      */
     @Test
-    public void testMovesPossible() {
+    public void testMovesPossibleTrueMove() {
         Position newPosition = new Position(board, 2, 1);
-        Position[] test = possibleMoves2.toArray(new Position[possibleMoves2.size()]);
-        assertEquals(test[0].getRow(), newPosition.getRow());
-        assertEquals(test[0].getColumn(), newPosition.getColumn());
-        assertEquals(test[0].getBoard(), newPosition.getBoard());
-        //assertTrue(possibleMoves2.contains(newPosition));
-        
+        assertTrue(possibleMoves2.contains(board.getSquare(newPosition)));   
     }
     
+    /**
+     * Test of movesPossible method, of class Pawn.
+     * 
+     * Tests a scenario without a valid move
+     */
+    @Test
+    public void testMovesPossibleInvalidMove() {
+        Position newPosition = new Position(board, 4, 5);
+        assertFalse(possibleMoves2.contains(board.getSquare(newPosition)));
+    }
+    
+    /**
+     * Tests a scenario where the piece does not have a position
+     */
+    @Test(expected=NullPointerException.class)
+    public void testMovesPossibleNoPosition() {
+        possibleMoves = pawn.movesPossible();   
+    }
 }

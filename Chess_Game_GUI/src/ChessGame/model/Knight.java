@@ -5,16 +5,21 @@
  */
 package ChessGame.model;
 
+import java.awt.Color;
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
  * @author Laz Bratton
  */
 public class Knight extends Piece{
-    
-    private HashSet<Square> possibleMoves;
-    public Knight() {
+    private Color color;
+    private Set<Square> possibleMoves;
+    public Knight(Color color) {
+        super();
+        
+        this.color = color;
         possibleMoves = new HashSet<>();
     }
     
@@ -24,7 +29,7 @@ public class Knight extends Piece{
     }
 
     @Override
-    public HashSet movesPossible() {
+    public Set movesPossible() {
         possibleMoves.clear();
         Position pos = getPosition();
         ChessBoard currentBoard = pos.getBoard();

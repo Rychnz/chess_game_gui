@@ -28,7 +28,7 @@ public class Position {
         if ( chessboard == null )
         {
             throw new IllegalArgumentException(
-                    "Galaxy parameter cannot be null");
+                    "ChessBoard parameter cannot be null");
         }
         if ( (row < 0) || (row >= chessboard.getNumRows()) )
         {
