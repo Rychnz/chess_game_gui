@@ -5,6 +5,7 @@
  */
 package ChessGame.model;
 
+import ChessGame.model.Bishop;
 import java.util.HashSet;
 import org.junit.After;
 import org.junit.AfterClass;

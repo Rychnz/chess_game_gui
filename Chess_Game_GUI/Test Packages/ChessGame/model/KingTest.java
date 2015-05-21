@@ -6,6 +6,10 @@
 package ChessGame.model;
 
 
+import ChessGame.model.ChessBoard;
+import ChessGame.model.King;
+import ChessGame.model.Position;
+import ChessGame.model.Square;
 import java.awt.Color;
 import java.util.Arrays;
 import java.util.HashSet;
