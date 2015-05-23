@@ -40,12 +40,12 @@ public class Main {
         });
         
         
-        Scanner lineRead = new Scanner(System.in);
-        
-        System.out.println("Welcome to Chess! Please enter your name:");
-        String name = lineRead.next();
-        Player player = new Player("name");
-        GameBuilder game = new GameBuilder(player);
+//        Scanner lineRead = new Scanner(System.in);
+//        
+//        System.out.println("Welcome to Chess! Please enter your name:");
+//        String name = lineRead.next();
+//        Player player = new Player("name");
+//        GameBuilder game = new GameBuilder(player);
         
     }
                 

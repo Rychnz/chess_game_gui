@@ -32,8 +32,8 @@ public class ChessBoard {
         squares = new Square[numRows][numColumns];
         buildChessBoard();
         placePieces();
-        draw();
-        playGame();
+        //draw();
+        //playGame();
 
     }
     
@@ -129,6 +129,10 @@ public class ChessBoard {
         }
         return result;
     }
+    
+    /**
+     * Gets a square with 
+     */
     
     
     /**
