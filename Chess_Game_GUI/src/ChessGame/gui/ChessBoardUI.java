@@ -6,6 +6,7 @@
 package ChessGame.gui;
 
 import ChessGame.model.ChessBoard;
+import ChessGame.model.Chess;
 import java.awt.Component;
 import java.awt.GridLayout;
 
@@ -15,20 +16,20 @@ import java.awt.GridLayout;
  */
 public class ChessBoardUI extends javax.swing.JFrame {
     
-    private ChessBoard board;
+    private Chess chess;
     private SquareGrid csSquareGrid;
     
     /**
      * Creates new form ChessBoardUI
      */
-    public ChessBoardUI(ChessBoard board) {
+    public ChessBoardUI(Chess game) {
         
-        this.board = board;
+        this.chess = game;
         
         initComponents();
         createChessBoardGrid();
                 
-        csSquareGrid = new SquareGrid(board, 8, 8);
+        csSquareGrid = new SquareGrid(chess, 8, 8);
         csSquare.add(csSquareGrid);
         
         update();
@@ -57,7 +58,7 @@ public class ChessBoardUI extends javax.swing.JFrame {
         {
             for ( int col = 0; col < 9; col++ )
             {
-                SquareGrid panel = new SquareGrid(board, row, col);
+                SquareGrid panel = new SquareGrid(chess, row, col);
                 csSquare.add(panel);
             }
         }

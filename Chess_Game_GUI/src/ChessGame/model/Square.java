@@ -5,6 +5,7 @@
  */
 package ChessGame.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -17,10 +18,22 @@ public abstract class Square {
     public static final int MAX_PIECES = 1;
     
     private Position position;
-    private Piece piece;
+    private Set<Piece> pieces;
     
+    /**
+     * Creates a new square on the chessboard
+     * 
+     * @param position  position on the board
+     * @author Laz
+     */
     public Square(Position position) {
         
+        if(position == null) {
+            throw new IllegalArgumentException("Position cannot be null!");
+        }
+        
+        this.position = position;
+        this.pieces = new HashSet<>();
     }
 
     /**
@@ -44,7 +57,7 @@ public abstract class Square {
         boolean success = false;
         if ( (newPiece != null) && !isOccupied() ) 
         {
-            piece = newPiece;
+            pieces.add(newPiece);
             success  = true;
         }
         return success;
@@ -55,11 +68,14 @@ public abstract class Square {
      * 
      * @return the old piece
      */
-    public Piece removePiece()
+    public boolean removePiece()
     {
-        Piece temp = piece;
-        piece = null;
-        return temp;
+        boolean success = false;
+        if(!pieces.isEmpty()) {
+            pieces.clear();
+            success = true;
+        }
+        return success;
     }
     
     /**
@@ -67,10 +83,10 @@ public abstract class Square {
      * 
      * @return the current piece
      */
-    public Piece getPiece()
-    {
-        return piece;
-    }
+//    public Piece getPiece()
+//    {
+//        return piece;
+//    }
 
     /**
      * Returns whether or not there is currently a piece on a square
@@ -78,7 +94,7 @@ public abstract class Square {
      * @return true if square is occupied
      */ 
     public boolean isOccupied() {
-        return piece != null;
+        return !pieces.isEmpty();
     }
   
     /**
@@ -89,7 +105,7 @@ public abstract class Square {
      */
     public boolean hasPiece(Piece p) 
     {
-        return piece == p;
+        return pieces.contains(p);
     }
     
     /**
@@ -101,11 +117,10 @@ public abstract class Square {
     {
         String result = "";
         
-        if ( isOccupied() )
+        for ( Piece thisPiece : pieces )
         {
-            result = piece.getStringRepresentation();
-        } 
-        
+            result += thisPiece.getStringRepresentation();
+        }
         return result;
     }
     

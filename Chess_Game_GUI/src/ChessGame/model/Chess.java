@@ -9,7 +9,7 @@ package ChessGame.model;
  *
  * @author Laz Bratton
  */
-public class GameBuilder {
+public class Chess {
     //true for in play, false for out of play
     private boolean state;
     //player one and player two fields
@@ -22,7 +22,7 @@ public class GameBuilder {
      * 
      * @param playerOne 
      */
-    public GameBuilder(Player playerOne) {
+    public Chess(Player playerOne) {
         this.playerOne = playerOne;
         
         newBoard = new ChessBoard();
@@ -34,7 +34,7 @@ public class GameBuilder {
      * @param playerOne
      * @param playerTwo 
      */
-    public GameBuilder(Player playerOne, Player playerTwo) {
+    public Chess(Player playerOne, Player playerTwo) {
         this.playerOne = playerOne;
         this.playerTwo = playerTwo;
         

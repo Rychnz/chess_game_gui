@@ -6,7 +6,7 @@
 package ChessGame.gui;
 
 import ChessGame.model.ChessBoard;
-import ChessGame.model.GameBuilder;
+import ChessGame.model.Chess;
 import ChessGame.model.Position;
 import ChessGame.model.Square;
 
@@ -17,7 +17,7 @@ import ChessGame.model.Square;
 public final class SquareGrid extends javax.swing.JPanel {
     
     private ChessBoard board;
-    private GameBuilder gb;
+    private Chess chess;
     private Square square;
     private Position pos;
     private int row;
@@ -26,9 +26,9 @@ public final class SquareGrid extends javax.swing.JPanel {
     /**
      * Creates new form SquareGrid
      */
-    public SquareGrid(ChessBoard board, int row, int column) {
+    public SquareGrid(Chess chess, int row, int column) {
         
-        this.board = board;
+        this.chess = chess;
         this.row = row;
         this.column = column;
         initComponents();
@@ -38,9 +38,9 @@ public final class SquareGrid extends javax.swing.JPanel {
     
     public void update()
     {
-        square = board.getSquare(pos);
-        csLabel.setText("P");
-        //csLabel.setText(square.getPieceStringRepresentation());
+        Square newSquare = chess.getSquare(row, column);
+        //csLabel.setText("P");
+        csLabel.setText(newSquare.getPieceStringRepresentation());
         csPanel.setBackground(new java.awt.Color(240, 240, 240));
     }
 

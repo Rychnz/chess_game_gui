@@ -2,7 +2,7 @@ package ChessGame.main;
 
 import ChessGame.gui.ChessBoardUI;
 import ChessGame.model.ChessBoard;
-import ChessGame.model.GameBuilder;
+import ChessGame.model.Chess;
 import ChessGame.model.Player;
 import ChessGame.model.Position;
 import java.util.Scanner;
@@ -23,9 +23,10 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+        Player player = new Player("name");
+        Chess game = new Chess(player);
         ChessBoard board        = new ChessBoard();
-        final ChessBoardUI ui   = new ChessBoardUI(board);
+        final ChessBoardUI ui   = new ChessBoardUI(game);
         
         // make the GUI visible
         java.awt.EventQueue.invokeLater(new Runnable() 
@@ -44,8 +45,8 @@ public class Main {
         
         System.out.println("Welcome to Chess! Please enter your name:");
         String name = lineRead.next();
-        Player player = new Player("name");
-        GameBuilder game = new GameBuilder(player);
+        
+        
         */
     }
                 

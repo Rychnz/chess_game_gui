@@ -64,8 +64,8 @@ public class ChessBoard {
           
             Position pos = new Position(this, rowNo, colNo);
             Piece p;
-            p = this.getSquare(pos).getPiece();
-            movePiece(squares[rowNo][colNo], squares[newRowNo][newColNo], p);
+            //p = this.getSquare(pos).getPiece();
+            //movePiece(squares[rowNo][colNo], squares[newRowNo][newColNo], p);
             draw();
             
             System.out.println("Do you want to keep playing? Type Y or N");
@@ -129,6 +129,7 @@ public class ChessBoard {
         }
         return result;
     }
+    
     
     /**
      * Creates a console text representation of the ChessBoard.
