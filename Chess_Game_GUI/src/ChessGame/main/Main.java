@@ -39,6 +39,7 @@ public class Main {
                 
             }
         });
+<<<<<<< HEAD
         /*        
         Scanner lineRead = new Scanner(System.in);
         
@@ -47,6 +48,17 @@ public class Main {
         Player player = new Player("name");
         GameBuilder game = new GameBuilder(player);
         */
+=======
+        
+        
+//        Scanner lineRead = new Scanner(System.in);
+//        
+//        System.out.println("Welcome to Chess! Please enter your name:");
+//        String name = lineRead.next();
+//        Player player = new Player("name");
+//        GameBuilder game = new GameBuilder(player);
+        
+>>>>>>> origin/master
     }
                 
 }

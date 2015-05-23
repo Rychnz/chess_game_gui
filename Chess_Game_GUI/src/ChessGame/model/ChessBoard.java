@@ -32,8 +32,8 @@ public class ChessBoard {
         squares = new Square[numRows][numColumns];
         buildChessBoard();
         placePieces();
-        draw();
-        playGame();
+        //draw();
+        //playGame();
 
     }
     
@@ -130,6 +130,14 @@ public class ChessBoard {
         return result;
     }
     
+<<<<<<< HEAD
+=======
+    /**
+     * Gets a square with 
+     */
+    
+    
+>>>>>>> origin/master
     /**
      * Creates a console text representation of the ChessBoard.
      */
