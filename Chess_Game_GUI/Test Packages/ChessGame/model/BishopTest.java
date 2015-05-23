@@ -61,10 +61,10 @@ public class BishopTest {
      */
     @Test
     public void testMovesPossible() {
-        Position pos1 = new Position(board, 7, 7);
+        Position pos1 = new Position(board, 4, 4);
         Position pos2 = new Position(board, 2, 4);
         Position pos3 = new Position(board, 4, 2);
-        Position pos4 = new Position(board, 1, 1);
+        Position pos4 = new Position(board, 2, 2);
         assertTrue(possibleMoves.contains(board.getSquare(pos1)));
         assertTrue(possibleMoves.contains(board.getSquare(pos2)));
         assertTrue(possibleMoves.contains(board.getSquare(pos3)));

@@ -34,13 +34,11 @@ public class Bishop extends Piece{
         possibleMoves.clear();
         Position pos = getPosition();
         ChessBoard currentBoard = pos.getBoard();
-        int rowNo, newRow; 
-        rowNo = newRow = pos.getRow();
-        int colNo, newCol;
-        colNo = newCol = pos.getColumn();
-        while((newRow>=0 && newRow<=7)&&(newCol>=0 && newCol<=7)) {
-            newRow = rowNo+1;
-            newCol = colNo+1;
+        int rowNo = pos.getRow();
+        int colNo = pos.getColumn();
+        for(int i = rowNo; i<=7; i++) {
+            int newRow = rowNo+1;
+            int newCol = colNo+1;
             Position newPos = new Position(currentBoard, newRow, newCol);
             newRow++;
             newCol++;
@@ -48,9 +46,9 @@ public class Bishop extends Piece{
                 possibleMoves.add(currentBoard.getSquare(newPos));
             }
         }
-        while((newRow>=0 && newRow<=7)&&(newCol>=0 && newCol<=7)) {
-            newRow = rowNo + 1;
-            newCol = colNo - 1;
+        for(int i = rowNo; i<=7; i++) {
+            int newRow = rowNo + 1;
+            int newCol = colNo - 1;
             Position newPos = new Position(currentBoard, newRow, newCol);
             newRow++;
             newCol--;
@@ -59,9 +57,9 @@ public class Bishop extends Piece{
             }
         }
             
-        while((newRow>=0 && newRow<=7)&&(newCol>=0 && newCol<=7)) {
-            newRow = (rowNo - 1);
-            newCol = (colNo - 1);
+        for(int i = rowNo; i<=7; i++) {
+            int newRow = rowNo - 1;
+            int newCol = colNo - 1;
             Position newPos = new Position(currentBoard, newRow, newCol);
             newRow--;
             newCol--;
@@ -69,9 +67,9 @@ public class Bishop extends Piece{
                 possibleMoves.add(currentBoard.getSquare(newPos));
             }
     }
-        while((newRow>=0 && newRow<=7)&&(newCol>=0 && newCol<=7)) {
-            newRow = rowNo - 1;
-            newCol = colNo + 1;
+        for(int i = rowNo; i<=7; i++) {
+            int newRow = rowNo - 1;
+            int newCol = colNo + 1;
             Position newPos = new Position(currentBoard, newRow, newCol);
             newRow--;
             newCol++;
