@@ -29,14 +29,14 @@ public class ChessBoardUI extends javax.swing.JFrame {
         initComponents();
         createChessBoardGrid();
                 
-        csSquareGrid = new SquareGrid(chess, 8, 8);
+        csSquareGrid = new SquareGrid(chess, 7, 7);
         csSquare.add(csSquareGrid);
         
         update();
         
     }
     
-    private void update()
+    public void update()
     {
         
         for ( Component component : csSquare.getComponents() )
@@ -56,7 +56,7 @@ public class ChessBoardUI extends javax.swing.JFrame {
         
         for ( int row = 0; row < 7; row++ )
         {
-            for ( int col = 0; col < 9; col++ )
+            for ( int col = 0; col < 8; col++ )
             {
                 SquareGrid panel = new SquareGrid(chess, row, col);
                 csSquare.add(panel);

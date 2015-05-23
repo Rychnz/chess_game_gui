@@ -6,8 +6,6 @@
 package ChessGame.model;
 
 import java.awt.Color;
-import java.util.Scanner;
-import java.util.Set;
 
 /**
  *
@@ -26,15 +24,11 @@ public class ChessBoard {
     
     public ChessBoard() {
         
-        //this.numRows    = numRows;
-        //this.numColumns = numColumns;
-        
         squares = new Square[numRows][numColumns];
         buildChessBoard();
         placePieces();
-        //draw();
+        draw();
         //playGame();
-
     }
     
     
