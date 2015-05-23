@@ -27,7 +27,7 @@ public class ChessBoard {
         squares = new Square[numRows][numColumns];
         buildChessBoard();
         placePieces();
-        draw();
+        
         //playGame();
     }
     
@@ -143,6 +143,19 @@ public class ChessBoard {
     }
     
     /**
+     * Checks to ensure position is within boundaries of board
+     *
+     * @returns true if so
+     */
+    public boolean withinBoundaries(Position pos) {
+        boolean success = false;
+        if((pos.getRow()>=0 && pos.getRow()<=7) && 
+                (pos.getColumn()>=0 && pos.getColumn()<=7))
+            success=true;
+        return success;
+    }
+    
+    /**
      * This will add all the pieces to their starting positions
      * 
      * - Laz
@@ -193,18 +206,19 @@ public class ChessBoard {
         Position pos8 = new Position(this, 7, 6);
         getSquare(pos8).addPiece(knight);
         
-        Piece bishop = new Bishop();
+        Piece bishopWhite = new Bishop(Color.WHITE);
         Position pos9 = new Position(this, 0, 2);
-        getSquare(pos9).addPiece(bishop);
+        getSquare(pos9).addPiece(bishopWhite);
 
         Position pos10 = new Position(this, 0, 5);
-        getSquare(pos10).addPiece(bishop);
-
+        getSquare(pos10).addPiece(bishopWhite);
+        
+        Piece bishopBlack = new Bishop(Color.BLACK);
         Position pos11 = new Position(this, 7, 2);
-        getSquare(pos11).addPiece(bishop);
+        getSquare(pos11).addPiece(bishopBlack);
 
         Position pos12 = new Position(this, 7, 5);
-        getSquare(pos12).addPiece(bishop);
+        getSquare(pos12).addPiece(bishopBlack);
         
         Piece king = new King(Color.WHITE);
         Position pos13 = new Position(this, 0, 3);

@@ -6,7 +6,9 @@
 package ChessGame.model;
 
 import ChessGame.model.Bishop;
+import java.awt.Color;
 import java.util.HashSet;
+import java.util.Set;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -20,23 +22,30 @@ import static org.junit.Assert.*;
  */
 public class BishopTest {
     
+    private Bishop bishop;
+    private ChessBoard board;
+    private Position position;
+    private Set<Square> possibleMoves;
+    
+    
     public BishopTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
     }
     
     @Before
     public void setUp() {
+        board = new ChessBoard();
+        position = new Position(board, 3, 3);
+        bishop = new Bishop(Color.WHITE);
+        bishop.setPosition(position);
+        possibleMoves = bishop.movesPossible();
     }
     
     @After
     public void tearDown() {
+        board = null;
+        position = null;
+        possibleMoves = null;
+        bishop = null;
     }
 
     /**
@@ -44,13 +53,7 @@ public class BishopTest {
      */
     @Test
     public void testGetStringRepresentation() {
-        System.out.println("getStringRepresentation");
-        Bishop instance = new Bishop();
-        String expResult = "";
-        String result = instance.getStringRepresentation();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals("B", bishop.getStringRepresentation());
     }
 
     /**
@@ -58,13 +61,14 @@ public class BishopTest {
      */
     @Test
     public void testMovesPossible() {
-        System.out.println("movesPossible");
-        Bishop instance = new Bishop();
-        HashSet expResult = null;
-        HashSet result = instance.movesPossible();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Position pos1 = new Position(board, 7, 7);
+        Position pos2 = new Position(board, 2, 4);
+        Position pos3 = new Position(board, 4, 2);
+        Position pos4 = new Position(board, 1, 1);
+        assertTrue(possibleMoves.contains(board.getSquare(pos1)));
+        assertTrue(possibleMoves.contains(board.getSquare(pos2)));
+        assertTrue(possibleMoves.contains(board.getSquare(pos3)));
+        assertTrue(possibleMoves.contains(board.getSquare(pos4)));
     }
     
 }

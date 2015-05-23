@@ -8,6 +8,7 @@ package ChessGame.gui;
 import ChessGame.model.ChessBoard;
 import ChessGame.model.Chess;
 import java.awt.Component;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 
 /**
@@ -52,11 +53,11 @@ public class ChessBoardUI extends javax.swing.JFrame {
     {
         
         csSquare.removeAll();
-        csSquare.setLayout(new GridLayout(8, 8));
+        csSquare.setLayout(new GridLayout(7, 7));
         
-        for ( int row = 0; row < 7; row++ )
+        for ( int row = 0; row <= 7; row++ )
         {
-            for ( int col = 0; col < 8; col++ )
+            for ( int col = 0; col <= 7; col++ )
             {
                 SquareGrid panel = new SquareGrid(chess, row, col);
                 csSquare.add(panel);

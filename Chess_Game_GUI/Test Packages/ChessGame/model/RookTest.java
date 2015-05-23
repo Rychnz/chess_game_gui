@@ -63,8 +63,8 @@ public class RookTest {
     @Test
     public void testMovesPossibleValidMoves() {
         Position behindPosition = new Position(board, 2, 3);
-        Position forwardPosition = new Position(board, 6, 3);
-        Position rightPosition = new Position(board, 3, 2);
+        Position forwardPosition = new Position(board, 7, 3);
+        Position rightPosition = new Position(board, 3, 0);
         Position leftPosition = new Position(board, 3, 5);
         assertTrue(possibleMoves.contains(board.getSquare(behindPosition)));
         assertTrue(possibleMoves.contains(board.getSquare(forwardPosition)));

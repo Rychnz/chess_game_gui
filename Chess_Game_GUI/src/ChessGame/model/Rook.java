@@ -38,19 +38,19 @@ public class Rook extends Piece {
         ChessBoard currentBoard = pos.getBoard();
         int rowNo = pos.getRow();
         int colNo = pos.getColumn();
-        for(int i = rowNo + 1; i<currentBoard.getNumRows(); i++) {
+        for(int i = rowNo + 1; i<=7; i++) {
             Position newPos = new Position(currentBoard, i, colNo);
             possibleMoves.add(currentBoard.getSquare(newPos));
         }
-        for(int i = colNo + 1; i<currentBoard.getNumRows(); i++) {
+        for(int i = colNo + 1; i<=7; i++) {
             Position newPos = new Position(currentBoard, rowNo, i);
             possibleMoves.add(currentBoard.getSquare(newPos));
         }
-        for(int i = rowNo - 1; i>=currentBoard.getNumRows(); i--) {
+        for(int i = rowNo - 1; i>=0; i--) {
             Position newPos = new Position(currentBoard, i, colNo);
             possibleMoves.add(currentBoard.getSquare(newPos));
         }
-        for(int i = colNo - 1; i>=currentBoard.getNumRows(); i--) {
+        for(int i = colNo - 1; i>=0; i--) {
             Position newPos = new Position(currentBoard, rowNo, i);
             possibleMoves.add(currentBoard.getSquare(newPos));
         }

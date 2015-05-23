@@ -73,4 +73,6 @@ public class Position {
     public ChessBoard getBoard() {
         return this.chessboard;
     }
+    
+    
 }

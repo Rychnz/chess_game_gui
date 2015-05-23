@@ -63,6 +63,7 @@ public final class SquareGrid extends javax.swing.JPanel {
         csLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         csLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         csLabel.setText("csLabel");
+        csLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         csPanel.add(csLabel, java.awt.BorderLayout.CENTER);
 
         add(csPanel, java.awt.BorderLayout.CENTER);
