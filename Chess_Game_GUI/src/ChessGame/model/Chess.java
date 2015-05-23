@@ -5,6 +5,9 @@
  */
 package ChessGame.model;
 
+import java.util.Scanner;
+import java.util.Set;
+
 /**
  *
  * @author Laz Bratton
@@ -56,6 +59,64 @@ public class Chess {
     public Square getSquare(int row, int column)
     {
         return newBoard.getSquare(new Position(newBoard, row, column));
-    }     
+    }
+    
+    public boolean movePiece(Square fromSquare, Square toSquare, Piece piece) {
+        boolean success = false;
+        Set<Square> moves = piece.movesPossible();
+        if(fromSquare.hasPiece(piece) && moves.contains(toSquare)) {
+            piece.setPosition(toSquare.getPosition());
+            fromSquare.removePiece();
+            toSquare.addPiece(piece);
+            success = true;
+        }
+        else {
+            throw new IllegalArgumentException("Square does not contain this piece!");
+        }
+        return success;
+    }
+    
+    /**
+     *  Play the game of Chess.
+     */
+    public void playGame(){
+        
+        int keepPlaying = 0;
+        
+        while(keepPlaying == 0){
+            Scanner lineRead = new Scanner(System.in);
+
+            System.out.println("Enter details of piece to move:");
+            System.out.println("Enter Row number of Piece to move:");
+            String col = lineRead.next();
+            System.out.println("Enter Column number of Piece to move:");
+            String row = lineRead.next();
+            System.out.println("Enter destination Row number:");
+            String newCol = lineRead.next();
+            System.out.println("Enter destination Column number:");
+            String newRow = lineRead.next();
+                
+            int colNo = Integer.parseInt(col);
+            int rowNo = Integer.parseInt(row);
+            int newColNo = Integer.parseInt(newCol);
+            int newRowNo = Integer.parseInt(newRow);
+          
+            Position pos = new Position(newBoard, rowNo, colNo);
+            Piece p;
+            //p = this.getSquare(pos).getPiece();
+            //movePiece(squares[rowNo][colNo], squares[newRowNo][newColNo], p);
+            newBoard.draw();
+            
+            System.out.println("Do you want to keep playing? Type Y or N");
+            String cp = lineRead.next();
+            
+            String playOn = "Y";
+                                    
+            if(cp.equals(playOn))keepPlaying = 0;
+            else keepPlaying = 1;
+        } 
+        System.out.println("You have chosen to quit, good bye!");
+        
+    }
     
 }
