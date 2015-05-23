@@ -130,7 +130,6 @@ public class ChessBoard {
         return result;
     }
     
-    
     /**
      * Creates a console text representation of the ChessBoard.
      */

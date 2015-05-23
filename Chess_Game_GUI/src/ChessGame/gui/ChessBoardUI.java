@@ -80,7 +80,6 @@ public class ChessBoardUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel csSquare;
     // End of variables declaration//GEN-END:variables
