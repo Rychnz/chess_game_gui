@@ -19,7 +19,7 @@ public class Chess {
     private Player playerOne;
     private Player playerTwo;
     private ChessBoard newBoard;
-    
+        
     /**
      * Single player GameBuilder constructor, use for practice
      * 
