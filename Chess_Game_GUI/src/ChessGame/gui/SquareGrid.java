@@ -32,13 +32,15 @@ public final class SquareGrid extends javax.swing.JPanel {
         this.row = row;
         this.column = column;
         initComponents();
+        
         update();
     }
     
     public void update()
     {
-        square = gb.getSquare(row, column);
-        csLabel.setText(square.getPieceStringRepresentation());
+        square = board.getSquare(pos);
+        csLabel.setText("P");
+        //csLabel.setText(square.getPieceStringRepresentation());
         csPanel.setBackground(new java.awt.Color(240, 240, 240));
     }
 

@@ -100,12 +100,15 @@ public abstract class Square {
     public String getPieceStringRepresentation()
     {
         String result = "";
+        
         if ( isOccupied() )
         {
             result = piece.getStringRepresentation();
         } 
+        
         return result;
     }
+    
     
     /**
      * Returns the string representation of this square.
