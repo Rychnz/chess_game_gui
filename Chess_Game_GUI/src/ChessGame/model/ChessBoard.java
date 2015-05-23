@@ -130,14 +130,14 @@ public class ChessBoard {
         return result;
     }
     
-<<<<<<< HEAD
-=======
+    //<<<<<<< HEAD
+    //=======
     /**
      * Gets a square with 
      */
     
     
->>>>>>> origin/master
+    //>>>>>>> origin/master
     /**
      * Creates a console text representation of the ChessBoard.
      */
