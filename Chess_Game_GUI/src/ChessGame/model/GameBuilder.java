@@ -45,4 +45,17 @@ public class GameBuilder {
         return newBoard;
     }
     
+    /**
+     * Convenience method to get a square.
+     * 
+     * @param row the row to get
+     * @param column the column to get
+     * @return the square at that position,
+     *         or null if the position is not valid
+     */
+    public Square getSquare(int row, int column)
+    {
+        return newBoard.getSquare(new Position(newBoard, row, column));
+    }     
+    
 }

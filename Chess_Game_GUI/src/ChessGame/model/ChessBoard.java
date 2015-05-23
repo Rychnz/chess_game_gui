@@ -32,11 +32,7 @@ public class ChessBoard {
         squares = new Square[numRows][numColumns];
         buildChessBoard();
         placePieces();
-        //draw();
-        
-
-        
-
+        draw();
         playGame();
 
     }
@@ -70,7 +66,7 @@ public class ChessBoard {
             Piece p;
             p = this.getSquare(pos).getPiece();
             movePiece(squares[rowNo][colNo], squares[newRowNo][newColNo], p);
-            //draw();
+            draw();
             
             System.out.println("Do you want to keep playing? Type Y or N");
             String cp = lineRead.next();
@@ -133,6 +129,7 @@ public class ChessBoard {
         }
         return result;
     }
+    
     
     /**
      * Creates a console text representation of the ChessBoard.
