@@ -5,10 +5,6 @@
  */
 package ChessGame.model;
 
-import ChessGame.model.ChessBoard;
-import ChessGame.model.Pawn;
-import ChessGame.model.Position;
-import ChessGame.model.Square;
 import java.awt.Color;
 import java.util.Set;
 import org.junit.After;

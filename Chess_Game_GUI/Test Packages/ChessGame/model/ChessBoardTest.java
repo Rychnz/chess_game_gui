@@ -18,23 +18,18 @@ import static org.junit.Assert.*;
  */
 public class ChessBoardTest {
     
+    ChessBoard board;
     public ChessBoardTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
     }
     
     @Before
     public void setUp() {
+        board = new ChessBoard();
     }
     
     @After
     public void tearDown() {
+        board = null;
     }
 
     /**
@@ -42,13 +37,7 @@ public class ChessBoardTest {
      */
     @Test
     public void testGetNumRows() {
-        System.out.println("getNumRows");
-        ChessBoard instance = new ChessBoard();
-        int expResult = 0;
-        int result = instance.getNumRows();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(7, board.getNumRows());
     }
 
     /**
@@ -56,13 +45,7 @@ public class ChessBoardTest {
      */
     @Test
     public void testGetNumColumns() {
-        System.out.println("getNumColumns");
-        ChessBoard instance = new ChessBoard();
-        int expResult = 0;
-        int result = instance.getNumColumns();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(7, board.getNumColumns());
     }
 
     /**
@@ -70,14 +53,7 @@ public class ChessBoardTest {
      */
     @Test
     public void testGetSquare() {
-        System.out.println("getSquare");
-        Position pos = null;
-        ChessBoard instance = new ChessBoard();
-        Square expResult = null;
-        Square result = instance.getSquare(pos);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -85,11 +61,7 @@ public class ChessBoardTest {
      */
     @Test
     public void testDraw() {
-        System.out.println("draw");
-        ChessBoard instance = new ChessBoard();
-        instance.draw();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -97,13 +69,7 @@ public class ChessBoardTest {
      */
     @Test
     public void testGetStringRepresentation() {
-        System.out.println("getStringRepresentation");
-        ChessBoard instance = new ChessBoard();
-        String expResult = "";
-        String result = instance.getStringRepresentation();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -111,14 +77,7 @@ public class ChessBoardTest {
      */
     @Test
     public void testWithinBoundaries() {
-        System.out.println("withinBoundaries");
-        Position pos = null;
-        ChessBoard instance = new ChessBoard();
-        boolean expResult = false;
-        boolean result = instance.withinBoundaries(pos);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }

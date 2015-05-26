@@ -43,7 +43,7 @@ public class ChessBoard {
      */
     public ChessBoard(String test) {
         squares = new Square[numRows][numColumns];
-        
+        //buildChessBoard();
     }
     
 

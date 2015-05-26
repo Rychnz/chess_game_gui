@@ -77,5 +77,41 @@ public class Player {
     public void setGamesPlayed(int newGamesPlayed) {
         gamesPlayed = newGamesPlayed;
     }
+    
+    /**
+     *Gets players score 
+     *
+     * @return score
+     */
+    public int getScore() {
+        return score;
+    }
+    
+    /**
+     * Gets games won
+     * 
+     * @return gamesWon
+     */
+    public int getGamesWon() {
+        return gamesWon;
+    }
+    
+    /**
+     * Gets games lost
+     * 
+     * @return gamesLost
+     */
+    public int getGamesLost() {
+        return gamesLost;
+    }
+    
+    /**
+     * Gets games played
+     * 
+     * @return 
+     */
+    public int getGamesPlayed() {
+        return gamesPlayed;
+    }
 }
 

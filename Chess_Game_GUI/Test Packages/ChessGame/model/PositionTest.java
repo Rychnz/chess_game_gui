@@ -35,7 +35,11 @@ public class PositionTest {
         board = null;
         pos = null;
     }
-
+    
+    @Test (expected=IllegalArgumentException.class)
+    public void testInvalidPosition() {
+        Position newPos = new Position(board, 0, 8);
+    }
     /**
      * Test of getRow method, of class Position.
      */
