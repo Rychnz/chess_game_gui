@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package ChessGame.model;
-
+import java.sql.*;
 /**
  *
  * @author Laz Bratton
@@ -29,6 +29,19 @@ public class Player {
         gamesLost = 0;
         gamesPlayed = 0;
         score = 0;
+        try {
+            Connection con = DriverManager.getConnection
+                        ("jdbc:derby://localhost:1527/ChessGame");
+            Statement stmt = con.createStatement();
+            String insert = "INSERT INTO PLAYER VALUES ('" + playerName + "', " + score + ", " +
+                gamesPlayed + ", " + gamesWon + ", " + gamesLost + ")";
+            stmt.execute(insert);
+            
+        }
+        catch(SQLException e) {
+            System.out.println("SQL exception occured" + e);
+        }
+        
     }
     
     /**
@@ -48,6 +61,18 @@ public class Player {
      * @param newScore
      */
     public void setScore(int newScore) {
+        try {
+            Connection con = DriverManager.getConnection
+                        ("jdbc:derby://localhost:1527/ChessGame");
+            Statement stmt = con.createStatement();
+            String updateScore = "UPDATE PLAYER SET SCORE=" + newScore + 
+                    " WHERE NAME = '" + playerName + "'";
+            stmt.execute(updateScore);
+            
+        }
+        catch(SQLException e) {
+            System.out.println("SQL exception occured" + e);
+        }
         score = newScore;
     }
     
@@ -57,6 +82,18 @@ public class Player {
      * @param newGamesWon
      */
     public void setGamesWon(int newGamesWon) {
+        try {
+            Connection con = DriverManager.getConnection
+                        ("jdbc:derby://localhost:1527/ChessGame");
+            Statement stmt = con.createStatement();
+            String updateScore = "UPDATE PLAYER SET GAMESWON=" + newGamesWon + 
+                    " WHERE NAME = '" + playerName + "'";
+            stmt.execute(updateScore);
+            
+        }
+        catch(SQLException e) {
+            System.out.println("SQL exception occured" + e);
+        }
         gamesWon = newGamesWon;
     }
     
@@ -66,6 +103,18 @@ public class Player {
      * @param newGamesLost
      */
     public void setGamesLost(int newGamesLost) {
+        try {
+            Connection con = DriverManager.getConnection
+                        ("jdbc:derby://localhost:1527/ChessGame");
+            Statement stmt = con.createStatement();
+            String updateScore = "UPDATE PLAYER SET GAMESLOST=" + newGamesLost + 
+                    " WHERE NAME = '" + playerName + "'";
+            stmt.execute(updateScore);
+            
+        }
+        catch(SQLException e) {
+            System.out.println("SQL exception occured" + e);
+        }
         gamesLost = newGamesLost;
     }
     
@@ -75,6 +124,18 @@ public class Player {
      * @param newGamesPlayed
      */
     public void setGamesPlayed(int newGamesPlayed) {
+        try {
+            Connection con = DriverManager.getConnection
+                        ("jdbc:derby://localhost:1527/ChessGame");
+            Statement stmt = con.createStatement();
+            String updateScore = "UPDATE PLAYER SET GAMESPLAYED=" + newGamesPlayed + 
+                    " WHERE NAME = '" + playerName + "'";
+            stmt.execute(updateScore);
+            
+        }
+        catch(SQLException e) {
+            System.out.println("SQL exception occured" + e);
+        }
         gamesPlayed = newGamesPlayed;
     }
     
