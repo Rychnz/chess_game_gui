@@ -22,6 +22,10 @@ public class ChessBoard {
     //private Piece piece;
     private Square square;
     
+    /**
+     * Default constructor for ChessBoard
+     * Creates board and places pieces to starting position
+     */
     public ChessBoard() {
         
         squares = new Square[numRows][numColumns];
@@ -31,6 +35,16 @@ public class ChessBoard {
         //playGame();
     }
     
+    /**
+     * Test constructor for chessboard
+     * Use only for testing as no pieces will be placed
+     * 
+     * @param test 
+     */
+    public ChessBoard(String test) {
+        squares = new Square[numRows][numColumns];
+        buildChessBoard();
+    }
     
 
     /**
@@ -224,7 +238,7 @@ public class ChessBoard {
         Position pos13 = new Position(this, 0, 3);
         getSquare(pos13).addPiece(king);
         
-        Piece queen = new Queen();
+        Piece queen = new Queen(Color.WHITE);
         Position pos14 = new Position(this, 0, 4);
         getSquare(pos14).addPiece(queen);
         
@@ -232,7 +246,7 @@ public class ChessBoard {
         Position pos15 = new Position(this, 7, 4);
         getSquare(pos15).addPiece(king2);
         
-        Piece queen2 = new Queen();
+        Piece queen2 = new Queen(Color.BLACK);
         Position pos16 = new Position(this, 7, 3);
         getSquare(pos16).addPiece(queen2);
     }

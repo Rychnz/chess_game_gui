@@ -5,7 +5,9 @@
  */
 package ChessGame.model;
 
+import java.awt.Color;
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -13,96 +15,68 @@ import java.util.HashSet;
  */
 public class Queen extends Piece{
 
-    private HashSet<Square> possibleMoves;
-    public Queen() {
+    private Set<Square> possibleMoves;
+    Color color;
+    public Queen(Color color) {
+        super();
+        
+        this.color = color;
         possibleMoves = new HashSet<>();
     }
     
     @Override
     public String getStringRepresentation() {
-        
         return "Q";
     }
 
     @Override
-    public HashSet movesPossible() {
+    public Set movesPossible() {
         possibleMoves.clear();
         Position pos = getPosition();
         ChessBoard currentBoard = pos.getBoard();
         int rowNo = pos.getRow();
         int colNo = pos.getColumn();
-        for(int i = rowNo + 1; i<currentBoard.getNumRows(); i++) {
-            int rowAddition = 1;
-            int colAddition = 1;
-            Position newPos = new Position(currentBoard, rowAddition, colAddition);
-            rowAddition++;
-            colAddition++;
-            if(!currentBoard.getSquare(newPos).isOccupied()) {
+        for(int i = rowNo; i<=7; i++) {
+            for(int k = colNo; k<=7; k++) {
+                Position newPos = new Position(currentBoard, i, k);
                 possibleMoves.add(currentBoard.getSquare(newPos));
             }
         }
-        for(int i = rowNo + 1; i<currentBoard.getNumRows(); i++) {
-            int rowAddition = 1;
-            int colAddition = -1;
-            Position newPos = new Position(currentBoard, rowAddition, colAddition);
-            rowAddition++;
-            colAddition--;
-            if(!currentBoard.getSquare(newPos).isOccupied()) {
+        for(int i = rowNo; i<=7; i++) {
+            for(int k = colNo; k>=0; k--) {
+                Position newPos = new Position(currentBoard, i, k);
                 possibleMoves.add(currentBoard.getSquare(newPos));
             }
         }
             
-        for(int i = rowNo + 1; i<currentBoard.getNumRows(); i++) {
-            int rowAddition = -1;
-            int colAddition = -1;
-            Position newPos = new Position(currentBoard, rowAddition, colAddition);
-            rowAddition--;
-            colAddition--;
-            if(!currentBoard.getSquare(newPos).isOccupied()) {
+        for(int i = rowNo; i>=0; i--) {
+            for(int k = colNo; k>=0; k--) {
+                Position newPos = new Position(currentBoard, i, k);
                 possibleMoves.add(currentBoard.getSquare(newPos));
             }
         }
-        for(int i = rowNo + 1; i<currentBoard.getNumRows(); i++) {
-            int rowAddition = -1;
-            int colAddition = 1;
-            Position newPos = new Position(currentBoard, rowAddition, colAddition);
-            rowAddition--;
-            colAddition++;
-            if(!currentBoard.getSquare(newPos).isOccupied()) {
+    
+        for(int i = rowNo; i>=0; i--) {
+            for(int k = colNo; k<=7; k++) {
+                Position newPos = new Position(currentBoard, i, k);
                 possibleMoves.add(currentBoard.getSquare(newPos));
             }
         }
-        for(int i = rowNo + 1; i<currentBoard.getNumRows(); i++) {
+        for(int i = rowNo + 1; i<=7; i++) {
             Position newPos = new Position(currentBoard, i, colNo);
-            if(!currentBoard.getSquare(newPos).isOccupied()) {
-                possibleMoves.add(currentBoard.getSquare(newPos));
-            }
-            else
-                break;
+            possibleMoves.add(currentBoard.getSquare(newPos));
         }
-        for(int i = colNo + 1; i<currentBoard.getNumRows(); i++) {
+        for(int i = colNo + 1; i<=7; i++) {
             Position newPos = new Position(currentBoard, rowNo, i);
-            if(!currentBoard.getSquare(newPos).isOccupied()) {
-                possibleMoves.add(currentBoard.getSquare(newPos));
-            }
-            else
-                break;
+            possibleMoves.add(currentBoard.getSquare(newPos));
         }
-        for(int i = rowNo - 1; i>currentBoard.getNumRows(); i--) {
+        for(int i = rowNo - 1; i>=0; i--) {
             Position newPos = new Position(currentBoard, i, colNo);
-            if(!currentBoard.getSquare(newPos).isOccupied()) {
-                possibleMoves.add(currentBoard.getSquare(newPos));
-            }
-            else
-                break;
+            possibleMoves.add(currentBoard.getSquare(newPos));
         }
-        for(int i = colNo - 1; i>currentBoard.getNumRows(); i--) {
+        for(int i = colNo - 1; i>=0; i--) {
             Position newPos = new Position(currentBoard, rowNo, i);
-            if(!currentBoard.getSquare(newPos).isOccupied()) {
-                possibleMoves.add(currentBoard.getSquare(newPos));
-            }
-            else
-                break;
+            possibleMoves.add(currentBoard.getSquare(newPos));
         }
         return possibleMoves;
     }

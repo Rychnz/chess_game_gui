@@ -5,10 +5,6 @@
  */
 package ChessGame.model;
 
-import ChessGame.model.ChessBoard;
-import ChessGame.model.Position;
-import ChessGame.model.Rook;
-import ChessGame.model.Square;
 import java.awt.Color;
 import java.util.Set;
 import org.junit.After;
@@ -22,24 +18,24 @@ import static org.junit.Assert.*;
  *
  * @author Laz Bratton
  */
-public class RookTest {
+public class QueenTest {
     
-    private Rook rook;
+    private Queen queen;
     private ChessBoard board;
     private Position position;
     private Set<Square> possibleMoves;
     
     
-    public RookTest() {
+    public QueenTest() {
     }
     
     @Before
     public void setUp() {
         board = new ChessBoard("test");
         position = new Position(board, 3, 3);
-        rook = new Rook(Color.WHITE);
-        rook.setPosition(position);
-        possibleMoves = rook.movesPossible();
+        queen = new Queen(Color.WHITE);
+        queen.setPosition(position);
+        possibleMoves = queen.movesPossible();
     }
     
     @After
@@ -47,27 +43,32 @@ public class RookTest {
         board = null;
         position = null;
         possibleMoves = null;
-        rook = null;
-    }
-    /**
-     * Test of getStringRepresentation method, of class Rook.
-     */
-    @Test
-    public void testGetStringRepresentation() {
-        assertEquals("R", rook.getStringRepresentation());
+        queen = null;
     }
 
     /**
-     * Test of movesPossible method, of class Rook.
+     * Test of getStringRepresentation method, of class Bishop.
      */
     @Test
-    public void testMovesPossibleValidMoves() {
-        Pawn pawn = new Pawn(Color.WHITE);
-        Position newPos = new Position(board, 6, 3);
-        board.getSquare(newPos).addPiece(pawn);
-        pawn.setPosition(newPos);
+    public void testGetStringRepresentation() {
+        assertEquals("Q", queen.getStringRepresentation());
+    }
+
+    /**
+     * Test of movesPossible method, of class Bishop.
+     */
+    @Test
+    public void testMovesPossible() {
+        Position pos1 = new Position(board, 7, 7);
+        Position pos2 = new Position(board, 0, 6);
+        Position pos3 = new Position(board, 6, 0);
+        Position pos4 = new Position(board, 0, 0);
+        assertTrue(possibleMoves.contains(board.getSquare(pos1)));
+        assertTrue(possibleMoves.contains(board.getSquare(pos2)));
+        assertTrue(possibleMoves.contains(board.getSquare(pos3)));
+        assertTrue(possibleMoves.contains(board.getSquare(pos4)));
         Position behindPosition = new Position(board, 0, 3);
-        Position forwardPosition = new Position(board, 6, 3);
+        Position forwardPosition = new Position(board, 7, 3);
         Position rightPosition = new Position(board, 3, 0);
         Position leftPosition = new Position(board, 3, 7);
         assertTrue(possibleMoves.contains(board.getSquare(behindPosition)));

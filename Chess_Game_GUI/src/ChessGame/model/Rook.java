@@ -40,19 +40,27 @@ public class Rook extends Piece {
         int colNo = pos.getColumn();
         for(int i = rowNo + 1; i<=7; i++) {
             Position newPos = new Position(currentBoard, i, colNo);
-            possibleMoves.add(currentBoard.getSquare(newPos));
+            if(!currentBoard.getSquare(newPos).isOccupied())
+                possibleMoves.add(currentBoard.getSquare(newPos));
+            else break;
         }
         for(int i = colNo + 1; i<=7; i++) {
             Position newPos = new Position(currentBoard, rowNo, i);
-            possibleMoves.add(currentBoard.getSquare(newPos));
+            if(!currentBoard.getSquare(newPos).isOccupied())
+                possibleMoves.add(currentBoard.getSquare(newPos));
+            else break;
         }
         for(int i = rowNo - 1; i>=0; i--) {
             Position newPos = new Position(currentBoard, i, colNo);
-            possibleMoves.add(currentBoard.getSquare(newPos));
+            if(!currentBoard.getSquare(newPos).isOccupied())
+                possibleMoves.add(currentBoard.getSquare(newPos));
+            else break;
         }
         for(int i = colNo - 1; i>=0; i--) {
             Position newPos = new Position(currentBoard, rowNo, i);
-            possibleMoves.add(currentBoard.getSquare(newPos));
+            if(!currentBoard.getSquare(newPos).isOccupied())
+                possibleMoves.add(currentBoard.getSquare(newPos));
+            else break;
         }
         
         
