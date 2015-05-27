@@ -30,7 +30,7 @@ public class ChessBoardUI extends javax.swing.JFrame {
         initComponents();
         createChessBoardGrid();
                 
-        csSquareGrid = new SquareGrid(chess, 7, 7);
+        csSquareGrid = new SquareGrid(chess, 8, 8);
         csSquare.add(csSquareGrid);
         
         update();
@@ -53,11 +53,11 @@ public class ChessBoardUI extends javax.swing.JFrame {
     {
         
         csSquare.removeAll();
-        csSquare.setLayout(new GridLayout(7, 7));
+        csSquare.setLayout(new GridLayout(9, 9));
         
-        for ( int row = 0; row <= 7; row++ )
+        for ( int row = 0; row < 8; row++ )
         {
-            for ( int col = 0; col <= 7; col++ )
+            for ( int col = 0; col < 8; col++ )
             {
                 SquareGrid panel = new SquareGrid(chess, row, col);
                 csSquare.add(panel);

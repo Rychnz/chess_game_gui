@@ -64,10 +64,19 @@ public final class SquareGrid extends javax.swing.JPanel {
         csLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         csLabel.setText("csLabel");
         csLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        csLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                csLabelMouseReleased(evt);
+            }
+        });
         csPanel.add(csLabel, java.awt.BorderLayout.CENTER);
 
         add(csPanel, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void csLabelMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_csLabelMouseReleased
+        csLabel.setText("?");
+    }//GEN-LAST:event_csLabelMouseReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
