@@ -78,7 +78,7 @@ public class QueenTest {
     }
     
     /**
-     * Test of movesPossible method, of class Rook.
+     * Test of movesPossible method, of class Queen.
      * 
      * Tests a scenario where a piece is blocking movement
      */
@@ -96,7 +96,7 @@ public class QueenTest {
     }
     
     /**
-     * Test of movesPossible method, of class Bishop.
+     * Test of movesPossible method, of class Queen.
      * 
      * Tests invalid moves that cannot be reached
      * As there is a piece blocking
@@ -115,9 +115,9 @@ public class QueenTest {
     }
     
     /**
-     * Test of movesPossible method, of class Bishop.
+     * Test of movesPossible method, of class Queen.
      * 
-     * Tests a range of valid movements from bishop
+     * Tests a range of valid movements from Queen
      */
     @Test
     public void testMovesPossiblePiecesToTake() {
@@ -144,9 +144,9 @@ public class QueenTest {
         possibleMoves = queen.movesPossible();
         
         assertTrue(possibleMoves.contains(board.getSquare(pos1)));
-        //assertTrue(possibleMoves.contains(board.getSquare(pos2)));
-        //assertTrue(possibleMoves.contains(board.getSquare(pos3)));
-        //assertTrue(possibleMoves.contains(board.getSquare(pos4)));
+        assertTrue(possibleMoves.contains(board.getSquare(pos2)));
+        assertTrue(possibleMoves.contains(board.getSquare(pos3)));
+        assertTrue(possibleMoves.contains(board.getSquare(pos4)));
         assertTrue(possibleMoves.contains(board.getSquare(behindPosition)));
         assertTrue(possibleMoves.contains(board.getSquare(forwardPosition)));
         assertTrue(possibleMoves.contains(board.getSquare(rightPosition)));
