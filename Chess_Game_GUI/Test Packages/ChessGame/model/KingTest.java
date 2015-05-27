@@ -83,4 +83,24 @@ public class KingTest {
         assertFalse(possibleMoves.contains(board.getSquare(randomOne)));
     }
     
+    /**
+     * Test of movesPossible method, of class King.
+     */
+    @Test
+    public void testMovesPossiblePiecesBlocking() {
+        Position forward = new Position(board, 4, 3);
+        Position right = new Position(board, 3, 2);
+        Position left = new Position(board, 3, 4);
+        Position backwards = new Position(board, 2, 3);
+        Pawn pawn = new Pawn(Color.WHITE);
+        board.getSquare(forward).addPiece(pawn);
+        board.getSquare(right).addPiece(pawn);
+        board.getSquare(left).addPiece(pawn);
+        board.getSquare(backwards).addPiece(pawn);
+        possibleMoves = king.movesPossible();
+        assertFalse(possibleMoves.contains(board.getSquare(forward)));
+        assertFalse(possibleMoves.contains(board.getSquare(right)));
+        assertFalse(possibleMoves.contains(board.getSquare(left)));
+        assertFalse(possibleMoves.contains(board.getSquare(backwards)));
+    }
 }

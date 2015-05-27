@@ -58,9 +58,11 @@ public class BishopTest {
 
     /**
      * Test of movesPossible method, of class Bishop.
+     * 
+     * Tests a range of valid movements from bishop
      */
     @Test
-    public void testMovesPossible() {
+    public void testMovesPossibleValidMoves() {
         Position pos1 = new Position(board, 7, 7);
         Position pos2 = new Position(board, 0, 6);
         Position pos3 = new Position(board, 6, 0);
@@ -70,5 +72,25 @@ public class BishopTest {
         assertTrue(possibleMoves.contains(board.getSquare(pos3)));
         assertTrue(possibleMoves.contains(board.getSquare(pos4)));
     }
+    
+    /**
+     * Test of movesPossible method, of class Bishop.
+     * 
+     * Tests invalid moves that cannot be reached
+     * As there is a piece blocking
+     */
+    @Test
+    public void testMovesPossibleInvalidMove() {
+        Bishop newB = new Bishop(Color.WHITE);
+        Position pos1 = new Position(board, 5, 5);
+        Position pos2 = new Position(board, 6, 6);
+        Position pos3 = new Position(board, 7, 7);
+        board.getSquare(pos1).addPiece(newB);
+        possibleMoves = bishop.movesPossible();
+        assertFalse(possibleMoves.contains(board.getSquare(pos1)));
+        assertFalse(possibleMoves.contains(board.getSquare(pos2)));
+        assertFalse(possibleMoves.contains(board.getSquare(pos3)));
+    }
+    
     
 }

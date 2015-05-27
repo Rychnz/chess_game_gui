@@ -37,7 +37,7 @@ public class KnightTest {
      */
     @Before
     public void setUp() {
-        board = new ChessBoard();
+        board = new ChessBoard("test");
         position = new Position(board, 3, 3);
         knight = new Knight(Color.WHITE);
         knight.setPosition(position);
@@ -67,6 +67,8 @@ public class KnightTest {
 
     /**
      * Test of movesPossible method, of class Knight.
+     * 
+     * All moves valid
      */
     @Test
     public void testMovesPossibleValidMoves() {
@@ -86,6 +88,27 @@ public class KnightTest {
         assertTrue(possibleMoves.contains(board.getSquare(moveSix)));
         assertTrue(possibleMoves.contains(board.getSquare(moveSeven)));
         assertTrue(possibleMoves.contains(board.getSquare(moveEight)));        
+    }
+    
+    /**
+     * Test of movesPossible method, of class Knight.
+     * 
+     * All moves valid
+     */
+    @Test
+    public void testMovesPossiblePiecesInPlace() {
+        Position moveOne = new Position(board, 5, 4);
+        Position moveTwo = new Position(board, 5, 2);
+        
+        Rook rook = new Rook(Color.WHITE);
+        board.getSquare(moveOne).addPiece(rook);
+        board.getSquare(moveTwo).addPiece(rook);
+        
+        //Board has changed since initiation, rerun movesPossible
+        possibleMoves = knight.movesPossible();
+        assertFalse(possibleMoves.contains(board.getSquare(moveOne)));
+        assertFalse(possibleMoves.contains(board.getSquare(moveTwo)));
+      
     }
     
 }

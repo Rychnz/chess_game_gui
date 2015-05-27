@@ -33,51 +33,82 @@ public class Queen extends Piece{
     public Set movesPossible() {
         possibleMoves.clear();
         Position pos = getPosition();
-        ChessBoard currentBoard = pos.getBoard();
+        ChessBoard board = pos.getBoard();
         int rowNo = pos.getRow();
         int colNo = pos.getColumn();
+        
+        outerloop:
         for(int i = rowNo; i<=7; i++) {
             for(int k = colNo; k<=7; k++) {
-                Position newPos = new Position(currentBoard, i, k);
-                possibleMoves.add(currentBoard.getSquare(newPos));
+                Position newPos = new Position(board, i, k);
+                if(!board.getSquare(newPos).isOccupied())
+                    possibleMoves.add(board.getSquare(newPos));
+                else break outerloop;
             }
         }
+        
+        outerloop:
         for(int i = rowNo; i<=7; i++) {
             for(int k = colNo; k>=0; k--) {
-                Position newPos = new Position(currentBoard, i, k);
-                possibleMoves.add(currentBoard.getSquare(newPos));
+                Position newPos = new Position(board, i, k);
+                if(!board.getSquare(newPos).isOccupied())
+                    possibleMoves.add(board.getSquare(newPos));
+                else break outerloop;
             }
         }
-            
+        
+        outerloop:
         for(int i = rowNo; i>=0; i--) {
             for(int k = colNo; k>=0; k--) {
-                Position newPos = new Position(currentBoard, i, k);
-                possibleMoves.add(currentBoard.getSquare(newPos));
+                Position newPos = new Position(board, i, k);
+                if(!board.getSquare(newPos).isOccupied())
+                    possibleMoves.add(board.getSquare(newPos));
+                else break outerloop;
             }
         }
-    
+        
+        outerloop:
         for(int i = rowNo; i>=0; i--) {
             for(int k = colNo; k<=7; k++) {
-                Position newPos = new Position(currentBoard, i, k);
-                possibleMoves.add(currentBoard.getSquare(newPos));
+                Position newPos = new Position(board, i, k);
+                if(!board.getSquare(newPos).isOccupied())
+                    possibleMoves.add(board.getSquare(newPos));
+                else break outerloop;
             }
         }
+        
+        outerloop:
         for(int i = rowNo + 1; i<=7; i++) {
-            Position newPos = new Position(currentBoard, i, colNo);
-            possibleMoves.add(currentBoard.getSquare(newPos));
+            Position newPos = new Position(board, i, colNo);
+            if(!board.getSquare(newPos).isOccupied())
+                possibleMoves.add(board.getSquare(newPos));
+            else break outerloop;
         }
+        
+        outerloop:
         for(int i = colNo + 1; i<=7; i++) {
-            Position newPos = new Position(currentBoard, rowNo, i);
-            possibleMoves.add(currentBoard.getSquare(newPos));
+            Position newPos = new Position(board, rowNo, i);
+            if(!board.getSquare(newPos).isOccupied())
+                possibleMoves.add(board.getSquare(newPos));
+            else break outerloop;
         }
+        
+        outerloop:
         for(int i = rowNo - 1; i>=0; i--) {
-            Position newPos = new Position(currentBoard, i, colNo);
-            possibleMoves.add(currentBoard.getSquare(newPos));
+            Position newPos = new Position(board, i, colNo);
+            if(!board.getSquare(newPos).isOccupied())
+                possibleMoves.add(board.getSquare(newPos));
+            else break outerloop;
         }
+        
+        outerloop:
         for(int i = colNo - 1; i>=0; i--) {
-            Position newPos = new Position(currentBoard, rowNo, i);
-            possibleMoves.add(currentBoard.getSquare(newPos));
+            Position newPos = new Position(board, rowNo, i);
+            if(!board.getSquare(newPos).isOccupied())
+                possibleMoves.add(board.getSquare(newPos));
+            else break outerloop;
         }
+        
         return possibleMoves;
     }
     

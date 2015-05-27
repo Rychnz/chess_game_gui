@@ -89,12 +89,46 @@ public class PawnTest {
     /**
      * Test of movesPossible method, of class Pawn.
      * 
-     * Tests a scenario without a valid move
+     * Tests a scenario without an invalid move
      */
     @Test
     public void testMovesPossibleInvalidMove() {
         Position newPosition = new Position(board, 4, 5);
         assertFalse(possibleMoves2.contains(board.getSquare(newPosition)));
+    }
+    
+    /**
+     * Test of movesPossible method, of class Pawn.
+     * 
+     * Tests a scenario with a piece blocking movement
+     */
+    @Test
+    public void testMovesPossiblePiecePresent() {
+        Position newPosition = new Position(board, 2, 1);
+        Pawn newPawn = new Pawn(Color.WHITE);
+        board.getSquare(newPosition).addPiece(newPawn);
+        //rerun possible moves as the board has been changed
+        possibleMoves2 = pawnWithPosition.movesPossible();
+        assertFalse(possibleMoves2.contains(board.getSquare(newPosition)));
+    }
+    
+    /**
+     * Test of movesPossible method, of class Pawn.
+     * 
+     * Tests a scenario with a piece in taking position
+     */
+    @Test
+    public void testMovesPossiblePieceToTake() {
+        Position newPosition = new Position(board, 2, 2);
+        Position newPos1 = new Position(board, 2, 0);
+        Pawn newPawn = new Pawn(Color.WHITE);
+        
+        board.getSquare(newPosition).addPiece(newPawn);
+        board.getSquare(newPos1).addPiece(newPawn);
+        //rerun possible moves as the board has been changed
+        possibleMoves2 = pawnWithPosition.movesPossible();
+        assertTrue(possibleMoves2.contains(board.getSquare(newPosition)));
+        assertTrue(possibleMoves2.contains(board.getSquare(newPos1)));
     }
     
     /**

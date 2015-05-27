@@ -38,12 +38,30 @@ public class Pawn extends Piece {
         int rowNo = pos.getRow();
         int colNo = pos.getColumn();
         Position forward;
-        if(color == Color.WHITE)
+        Position diagonalLeft;
+        Position diagonalRight;
+        
+        if(color == Color.WHITE) {
             forward = new Position(pos.getBoard(), rowNo + 1, colNo);
-        else
+            diagonalLeft = new Position(pos.getBoard(), rowNo + 1, colNo + 1);
+            diagonalRight = new Position(pos.getBoard(), rowNo + 1, colNo - 1);
+        }
+        else {
             forward = new Position(pos.getBoard(), rowNo - 1, colNo);
-        Square thisSquare = forward.getBoard().getSquare(forward);
-        moves.add(thisSquare);
+            diagonalLeft = new Position(pos.getBoard(), rowNo - 1, colNo + 1);
+            diagonalRight = new Position(pos.getBoard(), rowNo - 1, colNo - 1);
+        }
+        Square forwardSquare = forward.getBoard().getSquare(forward);
+        Square diagonalLeftSquare = diagonalLeft.getBoard().getSquare(diagonalLeft);
+        Square diagonalRightSquare = diagonalRight.getBoard().getSquare(diagonalRight);
+        
+        if(!forwardSquare.isOccupied())
+            moves.add(forwardSquare);
+        if(diagonalLeftSquare.isOccupied())
+            moves.add(diagonalLeftSquare);
+        if(diagonalRightSquare.isOccupied())
+            moves.add(diagonalRightSquare);
+        
         return moves;
     }
 }

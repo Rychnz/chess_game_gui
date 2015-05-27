@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="TheLeviathan" name="ChessGame.model.RookTest" skipped="0" tests="2" time="0.112" timestamp="2015-05-26T01:25:58">
+<testsuite errors="0" failures="0" hostname="TheLeviathan" name="ChessGame.model.RookTest" skipped="0" tests="3" time="0.087" timestamp="2015-05-27T04:12:14">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="GB" />
-    <property name="javac.test.classpath" value=":build/classes:C:\Program Files\NetBeans 8.0.1\platform\modules\ext\junit-4.10.jar" />
+    <property name="javac.test.classpath" value="C:\Program Files\Java\jdk1.8.0_11\db\lib\derbyclient.jar:build/classes:C:\Program Files\NetBeans 8.0.1\platform\modules\ext\junit-4.10.jar" />
     <property name="libs.jsf20.maven-pom" value="" />
     <property name="libs.DataBindingME.src" value="C:\Program Files\NetBeans 8.0.1\mobility\sources\netbeans_databindingme-src.zip" />
     <property name="libs.junit.javadoc" value="C:\Program Files\NetBeans 8.0.1\java\docs\junit-3.8.2-api.zip" />
@@ -58,7 +58,7 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner ChessGame.model.RookTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Laz Bratton\Documents\GitHub\chess_game_gui\Chess_Game_GUI\build\test\results\TEST-ChessGame.model.RookTest.xml crashfile=C:\Users\Laz Bratton\Documents\GitHub\chess_game_gui\Chess_Game_GUI\build\junitvmwatcher753975755445426942.properties propsfile=C:\Users\Laz Bratton\Documents\GitHub\chess_game_gui\Chess_Game_GUI\build\junit2479754554597209114.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner ChessGame.model.RookTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Laz Bratton\Documents\GitHub\chess_game_gui\Chess_Game_GUI\build\test\results\TEST-ChessGame.model.RookTest.xml crashfile=C:\Users\Laz Bratton\Documents\GitHub\chess_game_gui\Chess_Game_GUI\build\junitvmwatcher4546902852650508252.properties propsfile=C:\Users\Laz Bratton\Documents\GitHub\chess_game_gui\Chess_Game_GUI\build\junit7382908592174620482.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -70,7 +70,7 @@
     <property name="user.country" value="GB" />
     <property name="manifest.file" value="manifest.mf" />
     <property name="javadoc.encoding" value="UTF-8" />
-    <property name="javac.classpath" value="" />
+    <property name="javac.classpath" value="C:\Program Files\Java\jdk1.8.0_11\db\lib\derbyclient.jar" />
     <property name="libs.jsp-compilation-syscp.src" value="" />
     <property name="libs.JAVADB_DRIVER_LABEL.src" value="" />
     <property name="libs.spring-framework400.classpath" value="C:\Program Files\NetBeans 8.0.1\ide\modules\org-apache-commons-logging.jar;C:\Program Files\NetBeans 8.0.1\java\modules\ext\cglib-2.2.jar;C:\Program Files\NetBeans 8.0.1\java\modules\ext\spring-4\spring-aop-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.0.1\java\modules\ext\spring-4\spring-aspects-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.0.1\java\modules\ext\spring-4\spring-beans-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.0.1\java\modules\ext\spring-4\spring-build-src-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.0.1\java\modules\ext\spring-4\spring-context-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.0.1\java\modules\ext\spring-4\spring-context-support-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.0.1\java\modules\ext\spring-4\spring-core-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.0.1\java\modules\ext\spring-4\spring-expression-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.0.1\java\modules\ext\spring-4\spring-framework-bom-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.0.1\java\modules\ext\spring-4\spring-instrument-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.0.1\java\modules\ext\spring-4\spring-instrument-tomcat-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.0.1\java\modules\ext\spring-4\spring-jdbc-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.0.1\java\modules\ext\spring-4\spring-jms-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.0.1\java\modules\ext\spring-4\spring-messaging-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.0.1\java\modules\ext\spring-4\spring-orm-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.0.1\java\modules\ext\spring-4\spring-oxm-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.0.1\java\modules\ext\spring-4\spring-test-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.0.1\java\modules\ext\spring-4\spring-tx-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.0.1\java\modules\ext\spring-4\spring-web-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.0.1\java\modules\ext\spring-4\spring-webmvc-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.0.1\java\modules\ext\spring-4\spring-webmvc-portlet-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.0.1\java\modules\ext\spring-4\spring-websocket-4.0.1.RELEASE.jar" />
@@ -100,10 +100,10 @@
     <property name="javac.debug" value="true" />
     <property name="javadoc.splitindex" value="true" />
     <property name="file.separator" value="\" />
-    <property name="javac.includesfile.binary" value="C:\Users\Laz Bratton\Documents\GitHub\chess_game_gui\Chess_Game_GUI\null1282709764" />
+    <property name="javac.includesfile.binary" value="C:\Users\Laz Bratton\Documents\GitHub\chess_game_gui\Chess_Game_GUI\null633341640" />
     <property name="libs.junit_4.maven-pom" value="" />
     <property name="mkdist.disabled" value="false" />
-    <property name="javac.test.processorpath" value=":build/classes:C:\Program Files\NetBeans 8.0.1\platform\modules\ext\junit-4.10.jar" />
+    <property name="javac.test.processorpath" value="C:\Program Files\Java\jdk1.8.0_11\db\lib\derbyclient.jar:build/classes:C:\Program Files\NetBeans 8.0.1\platform\modules\ext\junit-4.10.jar" />
     <property name="netbeans.buildnumber" value="201411181905" />
     <property name="libs.JWSAntTasks.javadoc" value="" />
     <property name="build.generated.sources.dir" value="build/generated-sources" />
@@ -150,7 +150,7 @@
     <property name="manifest.available" value="true" />
     <property name="libs.primefaces.javadoc" value="" />
     <property name="libs.spring-framework300.maven-pom" value="" />
-    <property name="run.test.classpath" value=":build/classes:C:\Program Files\NetBeans 8.0.1\platform\modules\ext\junit-4.10.jar:build/test/classes" />
+    <property name="run.test.classpath" value="C:\Program Files\Java\jdk1.8.0_11\db\lib\derbyclient.jar:build/classes:C:\Program Files\NetBeans 8.0.1\platform\modules\ext\junit-4.10.jar:build/test/classes" />
     <property name="ant.project.invoked-targets" value="test-single" />
     <property name="test.binaryexcludes" value="" />
     <property name="libs.swing-layout.javadoc" value="C:\Program Files\NetBeans 8.0.1\platform\docs\swing-layout-1.0.4-doc.zip" />
@@ -174,6 +174,7 @@
     <property name="libs.JWSAntTasks.classpath" value="C:\Program Files\NetBeans 8.0.1\java\ant\extra\org-netbeans-modules-javawebstart-anttasks.jar" />
     <property name="libs.spring-webmvc4.0.maven-pom" value="" />
     <property name="libs.spring-framework300.src" value="" />
+    <property name="file.reference.derbyclient.jar" value="C:\Program Files\Java\jdk1.8.0_11\db\lib\derbyclient.jar" />
     <property name="libs.jstl.src" value="" />
     <property name="empty.dir" value="C:\Users\Laz Bratton\Documents\GitHub\chess_game_gui\Chess_Game_GUI\build\empty" />
     <property name="&lt;&lt;&lt;&lt;&lt;&lt;&lt;" value="HEAD" />
@@ -184,7 +185,7 @@
     <property name="libs.jpa20-persistence.javadoc" value="C:\Program Files\NetBeans 8.0.1\java\modules\ext\docs\javax.persistence-2.1.0-doc.zip" />
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_11\jre" />
     <property name="libs.jsp-compilation.src" value="" />
-    <property name="debug.test.classpath" value=":build/classes:C:\Program Files\NetBeans 8.0.1\platform\modules\ext\junit-4.10.jar:build/test/classes" />
+    <property name="debug.test.classpath" value="C:\Program Files\Java\jdk1.8.0_11\db\lib\derbyclient.jar:build/classes:C:\Program Files\NetBeans 8.0.1\platform\modules\ext\junit-4.10.jar:build/test/classes" />
     <property name="libs.javaee-endorsed-api-6.0.classpath" value="C:\Program Files\NetBeans 8.0.1\enterprise\modules\ext\javaee6-endorsed\javax.annotation.jar;C:\Program Files\NetBeans 8.0.1\enterprise\modules\ext\javaee6-endorsed\jaxb-api-osgi.jar;C:\Program Files\NetBeans 8.0.1\enterprise\modules\ext\javaee6-endorsed\webservices-api-osgi.jar" />
     <property name="libs.javaee-api-6.0.src" value="" />
     <property name="netbeans.importclass" value="org.netbeans.upgrade.AutoUpgrade" />
@@ -198,7 +199,7 @@
     <property name="http.nonProxyHosts" value="localhost|127.0.0.1|TheLeviathan" />
     <property name="libs.junit_4.javadoc" value="C:\Program Files\NetBeans 8.0.1\java\docs\junit-4.10-javadoc.jar" />
     <property name="libs.javaee-web-api-6.0.maven-pom" value="" />
-    <property name="run.classpath" value=":build/classes" />
+    <property name="run.classpath" value="C:\Program Files\Java\jdk1.8.0_11\db\lib\derbyclient.jar:build/classes" />
     <property name="jna.boot.library.name" value="jnidispatch-410" />
     <property name="libs.javaee-endorsed-api-6.0.javadoc" value="C:\Program Files\NetBeans 8.0.1\enterprise\docs\javaee-doc-api.jar" />
     <property name="libs.javaee-api-7.0.classpath" value="C:\Program Files\NetBeans 8.0.1\enterprise\modules\ext\javaee-api-7.0.jar" />
@@ -216,7 +217,7 @@
     <property name="javadoc.use" value="true" />
     <property name="sun.java2d.noddraw" value="true" />
     <property name="libs.jsp-compiler.classpath" value="C:\Program Files\NetBeans 8.0.1\enterprise\ant\extra\jspcompile.jar" />
-    <property name="javac.processorpath" value="" />
+    <property name="javac.processorpath" value="C:\Program Files\Java\jdk1.8.0_11\db\lib\derbyclient.jar" />
     <property name="javac.compilerargs" value="" />
     <property name="ant.file" value="C:\Users\Laz Bratton\Documents\GitHub\chess_game_gui\Chess_Game_GUI\build.xml" />
     <property name="libs.beans-binding.maven-pom" value="" />
@@ -240,7 +241,7 @@
     <property name="libs.jsp-compiler.src" value="" />
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_11\jre\bin" />
     <property name="have.sources" value="true" />
-    <property name="debug.classpath" value=":build/classes" />
+    <property name="debug.classpath" value="C:\Program Files\Java\jdk1.8.0_11\db\lib\derbyclient.jar:build/classes" />
     <property name="javadoc.private" value="false" />
     <property name="libs.jsf20.classpath" value="C:\Program Files\NetBeans 8.0.1\enterprise\modules\ext\jsf-2_2\javax.faces.jar" />
     <property name="ap.processors.internal" value="" />
@@ -298,16 +299,16 @@
     <property name="do.depend" value="false" />
     <property name="dist.javadoc.dir" value="dist/javadoc" />
     <property name="libs.j2me_common_ant.classpath" value="C:\Program Files\NetBeans 8.0.1\mobility\modules\org-netbeans-modules-j2me-common-ant.jar;C:\Program Files\NetBeans 8.0.1\java\modules\org-netbeans-modules-classfile.jar" />
-    <property name="libs.swing-layout.classpath" value="C:\Program Files\NetBeans 8.0.1\platform\modules\ext\swing-layout-1.0.4.jar" />
     <property name="libs.spring-webmvc3.0.classpath" value="C:\Program Files\NetBeans 8.0.1\java\modules\ext\spring-3.0\spring-webmvc-3.2.7.RELEASE.jar" />
+    <property name="libs.swing-layout.classpath" value="C:\Program Files\NetBeans 8.0.1\platform\modules\ext\swing-layout-1.0.4.jar" />
     <property name="libs.javaee-web-api-7.0.maven-pom" value="" />
     <property name="libs.restlib.src" value="" />
     <property name="javac.source" value="1.7" />
     <property name="build.generated.dir" value="build/generated" />
     <property name="line.separator" value="&#xd;&#xa;" />
     <property name="java.specification.version" value="1.8" />
-    <property name="java.vm.info" value="mixed mode" />
     <property name="libs.jaxws21.maven-pom" value="" />
+    <property name="java.vm.info" value="mixed mode" />
     <property name="nb.junit.batch" value="true" />
     <property name="junit.forkmode" value="perTest" />
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_11\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_11\jre\classes" />
@@ -317,8 +318,8 @@
     <property name="build.test.classes.dir" value="build/test/classes" />
     <property name="src.dir" value="src" />
     <property name="sun.awt.keepWorkingSetOnMinimize" value="true" />
-    <property name="annotation.processing.enabled" value="true" />
     <property name="libs.jpa2-persistence.src" value="" />
+    <property name="annotation.processing.enabled" value="true" />
     <property name="libs.jsf20.src" value="" />
     <property name="libs.jpa20-persistence.src" value="" />
     <property name="libs.DataBindingME-SVG.maven-pom" value="" />
@@ -330,15 +331,15 @@
     <property name="dist.dir" value="dist" />
     <property name="libs.groovy-all.javadoc" value="" />
     <property name="testng.debug.mode" value="" />
-    <property name="javac.fork" value="false" />
     <property name="libs.groovy-all.classpath" value="C:\Program Files\NetBeans 8.0.1\groovy\modules\ext\groovy-all.jar" />
+    <property name="javac.fork" value="false" />
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
     <property name="default.javac.source" value="1.8" />
     <property name="debug-transport-by-os" value="dt_shmem" />
-    <property name="sun.jnu.encoding" value="Cp1252" />
     <property name="libs.MySQLDriver.src" value="" />
-    <property name="build.test.results.dir" value="build/test/results" />
+    <property name="sun.jnu.encoding" value="Cp1252" />
     <property name="java.runtime.version" value="1.8.0_11-b12" />
+    <property name="build.test.results.dir" value="build/test/results" />
     <property name="default.javac.target" value="1.8" />
     <property name="libs.junit_4.classpath" value="C:\Program Files\NetBeans 8.0.1\platform\modules\ext\junit-4.10.jar" />
     <property name="user.timezone" value="Pacific/Auckland" />
@@ -354,12 +355,12 @@
     <property name="endorsed.classpath" value="" />
     <property name="libs.absolutelayout.classpath" value="C:\Program Files\NetBeans 8.0.1\java\modules\ext\AbsoluteLayout.jar" />
     <property name="excludes" value="" />
-    <property name="libs.restlib.maven-pom" value="" />
     <property name="libs.metro.classpath" value="C:\Program Files\NetBeans 8.0.1\ide\modules\ext\jaxb\activation.jar;C:\Program Files\NetBeans 8.0.1\enterprise\modules\ext\metro\webservices-api.jar;C:\Program Files\NetBeans 8.0.1\enterprise\modules\ext\metro\webservices-extra-api.jar;C:\Program Files\NetBeans 8.0.1\enterprise\modules\ext\metro\webservices-extra.jar;C:\Program Files\NetBeans 8.0.1\enterprise\modules\ext\metro\webservices-rt.jar;C:\Program Files\NetBeans 8.0.1\enterprise\modules\ext\metro\webservices-tools.jar" />
+    <property name="libs.restlib.maven-pom" value="" />
     <property name="libs.jpa2-persistence.javadoc" value="C:\Program Files\NetBeans 8.0.1\java\modules\ext\docs\javax.persistence-2.1.0-doc.zip" />
     <property name="libs.DataBindingME.javadoc" value="C:\Program Files\NetBeans 8.0.1\mobility\modules\docs\netbeans_databindingme-api.zip" />
     <property name="apple.laf.useScreenMenuBar" value="true" />
-    <property name="java.class.path" value="C:\Users\Laz Bratton\Documents\GitHub\chess_game_gui\Chess_Game_GUI\build\classes;C:\Program Files\NetBeans 8.0.1\platform\modules\ext\junit-4.10.jar;C:\Users\Laz Bratton\Documents\GitHub\chess_game_gui\Chess_Game_GUI\build\test\classes;C:\Users\Laz Bratton\AppData\Roaming\NetBeans\8.0.1\ant\lib\ant-launcher.jar;C:\Users\Laz Bratton\AppData\Roaming\NetBeans\8.0.1\ant\lib\ant.jar;C:\Users\Laz Bratton\AppData\Roaming\NetBeans\8.0.1\ant\lib\ant-junit.jar;C:\Users\Laz Bratton\AppData\Roaming\NetBeans\8.0.1\ant\lib\ant-junit4.jar" />
+    <property name="java.class.path" value="C:\Program Files\Java\jdk1.8.0_11\db\lib\derbyclient.jar;C:\Users\Laz Bratton\Documents\GitHub\chess_game_gui\Chess_Game_GUI\build\classes;C:\Program Files\NetBeans 8.0.1\platform\modules\ext\junit-4.10.jar;C:\Users\Laz Bratton\Documents\GitHub\chess_game_gui\Chess_Game_GUI\build\test\classes;C:\Users\Laz Bratton\AppData\Roaming\NetBeans\8.0.1\ant\lib\ant-launcher.jar;C:\Users\Laz Bratton\AppData\Roaming\NetBeans\8.0.1\ant\lib\ant.jar;C:\Users\Laz Bratton\AppData\Roaming\NetBeans\8.0.1\ant\lib\ant-junit.jar;C:\Users\Laz Bratton\AppData\Roaming\NetBeans\8.0.1\ant\lib\ant-junit4.jar" />
     <property name="do.mkdist" value="true" />
     <property name="libs.absolutelayout.src" value="" />
     <property name="libs.jpa20-persistence.classpath" value="C:\Program Files\NetBeans 8.0.1\java\modules\ext\eclipselink\javax.persistence_2.1.0.v201304241213.jar" />
@@ -388,8 +389,8 @@
     <property name="dist.archive.excludes" value="" />
     <property name="libs.testng.javadoc" value="C:\Program Files\NetBeans 8.0.1\platform\docs\testng-6.8.1-javadoc.zip" />
     <property name="libs.DataBindingME-PIM.src" value="C:\Program Files\NetBeans 8.0.1\mobility\sources\netbeans_databindingme_pim-src.zip" />
-    <property name="libs.PostgreSQLDriver.classpath" value="C:\Program Files\NetBeans 8.0.1\ide\modules\ext\postgresql-9.2-1002.jdbc4.jar" />
     <property name="user.script" value="" />
+    <property name="libs.PostgreSQLDriver.classpath" value="C:\Program Files\NetBeans 8.0.1\ide\modules\ext\postgresql-9.2-1002.jdbc4.jar" />
     <property name="libs.jsf12.maven-pom" value="" />
     <property name="libs.hibernate4-persistencemodelgen.classpath" value="C:\Program Files\NetBeans 8.0.1\java\modules\ext\hibernate4\hibernate-jpamodelgen-4.3.1.Final.jar" />
     <property name="libs.junit.src" value="" />
@@ -399,8 +400,8 @@
     <property name="build.dir" value="build" />
     <property name="libs.jsp-compilation.classpath" value="C:\Users\Laz Bratton\AppData\Roaming\NetBeans\8.0.1\ant\lib\ant.jar;C:\Program Files\NetBeans 8.0.1\enterprise\modules\ext\servlet3.1-jsp2.3-api.jar;C:\Program Files\NetBeans 8.0.1\enterprise\modules\ext\glassfish-jspparser-4.0.jar;C:\Program Files\NetBeans 8.0.1\enterprise\modules\ext\jsf-2_2\javax.faces.jar;C:\Program Files\NetBeans 8.0.1\enterprise\modules\ext\jstl-api.jar;C:\Users\Laz Bratton\AppData\Roaming\NetBeans\8.0.1\ant\lib\ant-launcher.jar" />
     <property name="ant.version" value="Apache Ant(TM) version 1.9.4 compiled on April 29 2014" />
-    <property name="file.encoding" value="Cp1252" />
     <property name="build.classes.excludes" value="**/*.java,**/*.form" />
+    <property name="file.encoding" value="Cp1252" />
     <property name="jdkBug6558476" value="false" />
     <property name="javadoc.nonavbar" value="false" />
     <property name="libs.spring-webmvc4.0.classpath" value="C:\Program Files\NetBeans 8.0.1\java\modules\ext\spring-4\spring-webmvc-4.0.1.RELEASE.jar" />
@@ -409,8 +410,9 @@
     <property name="libs.javaee-web-api-7.0.javadoc" value="C:\Program Files\NetBeans 8.0.1\enterprise\docs\javaee-doc-api.jar" />
     <property name="" value="======" />
   </properties>
-  <testcase classname="ChessGame.model.RookTest" name="testGetStringRepresentation" time="0.027" />
-  <testcase classname="ChessGame.model.RookTest" name="testMovesPossibleValidMoves" time="0.0" />
+  <testcase classname="ChessGame.model.RookTest" name="testMovesPossibleValidMoves" time="0.015" />
+  <testcase classname="ChessGame.model.RookTest" name="testGetStringRepresentation" time="0.001" />
+  <testcase classname="ChessGame.model.RookTest" name="testMovesPossiblePieceBlocking" time="0.001" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

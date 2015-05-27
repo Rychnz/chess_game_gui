@@ -36,21 +36,29 @@ public class Knight extends Piece{
         int rowNo = pos.getRow();
         int colNo = pos.getColumn();
         Position moveOne = new Position(currentBoard, rowNo + 2, colNo + 1);
-        possibleMoves.add(currentBoard.getSquare(moveOne));
+        if(!currentBoard.getSquare(moveOne).isOccupied())
+            possibleMoves.add(currentBoard.getSquare(moveOne));
         Position moveTwo = new Position(currentBoard, rowNo + 2, colNo - 1);
-        possibleMoves.add(currentBoard.getSquare(moveTwo));
+        if(!currentBoard.getSquare(moveTwo).isOccupied())
+            possibleMoves.add(currentBoard.getSquare(moveTwo));
         Position moveThree = new Position(currentBoard, rowNo + 1, colNo + 2);
-        possibleMoves.add(currentBoard.getSquare(moveThree));
+        if(!currentBoard.getSquare(moveThree).isOccupied())
+            possibleMoves.add(currentBoard.getSquare(moveThree));
         Position moveFour = new Position(currentBoard, rowNo + 1, colNo - 2);
-        possibleMoves.add(currentBoard.getSquare(moveFour));
+        if(!currentBoard.getSquare(moveFour).isOccupied())
+            possibleMoves.add(currentBoard.getSquare(moveFour));
         Position moveFive = new Position(currentBoard, rowNo - 1, colNo + 2);
-        possibleMoves.add(currentBoard.getSquare(moveFive));
+        if(!currentBoard.getSquare(moveFive).isOccupied())
+            possibleMoves.add(currentBoard.getSquare(moveFive));
         Position moveSix = new Position(currentBoard, rowNo - 1, colNo - 2);
-        possibleMoves.add(currentBoard.getSquare(moveSix));
+        if(!currentBoard.getSquare(moveSix).isOccupied())
+            possibleMoves.add(currentBoard.getSquare(moveSix));
         Position moveSeven = new Position(currentBoard, rowNo - 2, colNo + 1);
-        possibleMoves.add(currentBoard.getSquare(moveSeven));
+        if(!currentBoard.getSquare(moveSeven).isOccupied())
+            possibleMoves.add(currentBoard.getSquare(moveSeven));
         Position moveEight = new Position(currentBoard, rowNo - 2, colNo - 1);
-        possibleMoves.add(currentBoard.getSquare(moveEight));
+        if(!currentBoard.getSquare(moveEight).isOccupied())
+            possibleMoves.add(currentBoard.getSquare(moveEight));
         
         return possibleMoves;
     }

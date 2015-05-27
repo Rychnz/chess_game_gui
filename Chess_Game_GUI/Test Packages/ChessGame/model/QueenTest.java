@@ -77,4 +77,40 @@ public class QueenTest {
         assertTrue(possibleMoves.contains(board.getSquare(leftPosition)));
     }
     
+    /**
+     * Test of movesPossible method, of class Rook.
+     * 
+     * Tests a scenario where a piece is blocking movement
+     */
+    @Test
+    public void testMovesPossiblePieceBlocking() {
+        Pawn pawn = new Pawn(Color.WHITE);
+        Position newPos = new Position(board, 6, 3);
+        Position newPos1 = new Position(board, 7, 3);
+        board.getSquare(newPos).addPiece(pawn);
+        pawn.setPosition(newPos);
+        possibleMoves = queen.movesPossible();
+        assertFalse(possibleMoves.contains(board.getSquare(newPos)));
+        assertFalse(possibleMoves.contains(board.getSquare(newPos1)));
+    
+    }
+    
+    /**
+     * Test of movesPossible method, of class Bishop.
+     * 
+     * Tests invalid moves that cannot be reached
+     * As there is a piece blocking
+     */
+    @Test
+    public void testMovesPossibleInvalidMove() {
+        Bishop newB = new Bishop(Color.WHITE);
+        Position pos1 = new Position(board, 5, 5);
+        Position pos2 = new Position(board, 6, 6);
+        Position pos3 = new Position(board, 7, 7);
+        board.getSquare(pos1).addPiece(newB);
+        possibleMoves = queen.movesPossible();
+        assertFalse(possibleMoves.contains(board.getSquare(pos1)));
+        assertFalse(possibleMoves.contains(board.getSquare(pos2)));
+        assertFalse(possibleMoves.contains(board.getSquare(pos3)));
+    }
 }

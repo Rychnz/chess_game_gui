@@ -33,41 +33,46 @@ public class Bishop extends Piece{
     public Set movesPossible() {
         possibleMoves.clear();
         Position pos = getPosition();
-        ChessBoard currentBoard = pos.getBoard();
+        ChessBoard board = pos.getBoard();
         int rowNo = pos.getRow();
         int colNo = pos.getColumn();
+        
+        outerloop:
         for(int i = rowNo; i<=7; i++) {
             for(int k = colNo; k<=7; k++) {
-                Position newPos = new Position(currentBoard, i, k);
-            if(!currentBoard.getSquare(newPos).isOccupied())
-                possibleMoves.add(currentBoard.getSquare(newPos));
-            else break;
+                Position newPos = new Position(board, i, k);
+            if(!board.getSquare(newPos).isOccupied())
+                possibleMoves.add(board.getSquare(newPos));
+            else break outerloop;
             }
         }
+        outerloop:
         for(int i = rowNo; i<=7; i++) {
             for(int k = colNo; k>=0; k--) {
-                Position newPos = new Position(currentBoard, i, k);
-            if(!currentBoard.getSquare(newPos).isOccupied())
-                possibleMoves.add(currentBoard.getSquare(newPos));
-            else break;
+                Position newPos = new Position(board, i, k);
+            if(!board.getSquare(newPos).isOccupied())
+                possibleMoves.add(board.getSquare(newPos));
+            else break outerloop;
             }
         }
-            
+        
+        outerloop:
         for(int i = rowNo; i>=0; i--) {
             for(int k = colNo; k>=0; k--) {
-                Position newPos = new Position(currentBoard, i, k);
-            if(!currentBoard.getSquare(newPos).isOccupied())
-                possibleMoves.add(currentBoard.getSquare(newPos));
-            else break;
+                Position newPos = new Position(board, i, k);
+            if(!board.getSquare(newPos).isOccupied())
+                possibleMoves.add(board.getSquare(newPos));
+            else break outerloop;
             }
         }
-    
+        
+        outerloop:
         for(int i = rowNo; i>=0; i--) {
             for(int k = colNo; k<=7; k++) {
-                Position newPos = new Position(currentBoard, i, k);
-            if(!currentBoard.getSquare(newPos).isOccupied())
-                possibleMoves.add(currentBoard.getSquare(newPos));
-            else break;
+                Position newPos = new Position(board, i, k);
+            if(!board.getSquare(newPos).isOccupied())
+                possibleMoves.add(board.getSquare(newPos));
+            else break outerloop;
             }
         }
     
