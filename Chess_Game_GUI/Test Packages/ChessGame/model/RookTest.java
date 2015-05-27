@@ -82,12 +82,41 @@ public class RookTest {
     @Test
     public void testMovesPossiblePieceBlocking() {
         Pawn pawn = new Pawn(Color.WHITE);
+        Position blockPos = new Position(board, 5, 3);
         Position newPos = new Position(board, 6, 3);
         Position newPos1 = new Position(board, 7, 3);
-        board.getSquare(newPos).addPiece(pawn);
-        pawn.setPosition(newPos);
+        board.getSquare(blockPos).addPiece(pawn);
+        //pawn.setPosition(blockPos);
         possibleMoves = rook.movesPossible();
+        assertFalse(possibleMoves.contains(board.getSquare(blockPos)));
         assertFalse(possibleMoves.contains(board.getSquare(newPos)));
         assertFalse(possibleMoves.contains(board.getSquare(newPos1)));
+    }
+    
+    /**
+     * Test of movesPossible method, of class Rook.
+     * 
+     * Tests a scenario where all moves are valid
+     */
+    @Test
+    public void testMovesPossiblePiecesToTake() {
+        Pawn pawn = new Pawn(Color.BLACK);
+        
+        Position behindPosition = new Position(board, 0, 3);
+        Position forwardPosition = new Position(board, 6, 3);
+        Position rightPosition = new Position(board, 3, 0);
+        Position leftPosition = new Position(board, 3, 7);
+        
+        board.getSquare(behindPosition).addPiece(pawn);
+        board.getSquare(forwardPosition).addPiece(pawn);
+        board.getSquare(rightPosition).addPiece(pawn);
+        board.getSquare(leftPosition).addPiece(pawn);
+
+        possibleMoves = rook.movesPossible();
+        
+        assertTrue(possibleMoves.contains(board.getSquare(behindPosition)));
+        assertTrue(possibleMoves.contains(board.getSquare(forwardPosition)));
+        assertTrue(possibleMoves.contains(board.getSquare(rightPosition)));
+        assertTrue(possibleMoves.contains(board.getSquare(leftPosition)));
     }
 }

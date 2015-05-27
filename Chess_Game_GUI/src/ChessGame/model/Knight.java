@@ -17,7 +17,7 @@ public class Knight extends Piece{
     private Color color;
     private Set<Square> possibleMoves;
     public Knight(Color color) {
-        super();
+        super(color);
         
         this.color = color;
         possibleMoves = new HashSet<>();

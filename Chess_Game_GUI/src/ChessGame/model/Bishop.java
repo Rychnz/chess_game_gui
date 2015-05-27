@@ -14,10 +14,12 @@ import java.util.Set;
  * @author Laz Bratton
  */
 public class Bishop extends Piece{
+    
     Color color;
     private Set<Square> possibleMoves;
+    
     public Bishop(Color color) {
-        super();
+        super(color);
         
         color = this.color;
         possibleMoves = new HashSet<>();
@@ -39,20 +41,30 @@ public class Bishop extends Piece{
         
         outerloop:
         for(int i = rowNo; i<=7; i++) {
+            innerloop:
             for(int k = colNo; k<=7; k++) {
                 Position newPos = new Position(board, i, k);
             if(!board.getSquare(newPos).isOccupied())
                 possibleMoves.add(board.getSquare(newPos));
-            else break outerloop;
+            else {
+                
+                if(board.getSquare(newPos).getOccupyingPieceColor() != this.color)
+                    possibleMoves.add(board.getSquare(newPos));
+                break outerloop;
+                }
             }
         }
         outerloop:
         for(int i = rowNo; i<=7; i++) {
             for(int k = colNo; k>=0; k--) {
                 Position newPos = new Position(board, i, k);
-            if(!board.getSquare(newPos).isOccupied())
-                possibleMoves.add(board.getSquare(newPos));
-            else break outerloop;
+                if(!board.getSquare(newPos).isOccupied())
+                    possibleMoves.add(board.getSquare(newPos));
+                else {
+                if(board.getSquare(newPos).getOccupyingPieceColor() != color)
+                    possibleMoves.add(board.getSquare(newPos));
+                break outerloop;
+                }
             }
         }
         
@@ -62,7 +74,11 @@ public class Bishop extends Piece{
                 Position newPos = new Position(board, i, k);
             if(!board.getSquare(newPos).isOccupied())
                 possibleMoves.add(board.getSquare(newPos));
-            else break outerloop;
+            else {
+                if(board.getSquare(newPos).getOccupyingPieceColor() != color)
+                    possibleMoves.add(board.getSquare(newPos));
+                break outerloop;
+                }
             }
         }
         
@@ -72,7 +88,11 @@ public class Bishop extends Piece{
                 Position newPos = new Position(board, i, k);
             if(!board.getSquare(newPos).isOccupied())
                 possibleMoves.add(board.getSquare(newPos));
-            else break outerloop;
+            else {
+                if(board.getSquare(newPos).getOccupyingPieceColor() != color)
+                    possibleMoves.add(board.getSquare(newPos));
+                break outerloop;
+                }
             }
         }
     

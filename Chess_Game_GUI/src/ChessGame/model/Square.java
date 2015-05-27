@@ -5,6 +5,7 @@
  */
 package ChessGame.model;
 
+import java.awt.Color;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -83,10 +84,12 @@ public abstract class Square {
      * 
      * @return the current piece
      */
-//    public Piece getPiece()
-//    {
-//        return piece;
-//    }
+    public Color getOccupyingPieceColor()
+    {
+        Piece[] pieceArray = pieces.toArray(new Piece[pieces.size()]);
+        Piece thisPiece = pieceArray[0];
+        return thisPiece.getPieceColor();
+    }
 
     /**
      * Returns whether or not there is currently a piece on a square

@@ -18,7 +18,7 @@ public class Queen extends Piece{
     private Set<Square> possibleMoves;
     Color color;
     public Queen(Color color) {
-        super();
+        super(color);
         
         this.color = color;
         possibleMoves = new HashSet<>();
