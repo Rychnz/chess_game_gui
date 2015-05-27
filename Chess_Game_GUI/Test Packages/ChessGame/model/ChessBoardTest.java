@@ -37,7 +37,7 @@ public class ChessBoardTest {
      */
     @Test
     public void testGetNumRows() {
-        assertEquals(7, board.getNumRows());
+        assertEquals(9, board.getNumRows());
     }
 
     /**
@@ -45,7 +45,7 @@ public class ChessBoardTest {
      */
     @Test
     public void testGetNumColumns() {
-        assertEquals(7, board.getNumColumns());
+        assertEquals(9, board.getNumColumns());
     }
 
     /**

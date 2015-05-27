@@ -3,11 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/User%20Files/My%20Documents/AUT/BCIS/Program%20Design%20and%20Construction/GitHub/chess_game_gui/Chess_Game_GUI/src/ChessGame/model/Square.java</file>
-            <file>file:/D:/User%20Files/My%20Documents/AUT/BCIS/Program%20Design%20and%20Construction/GitHub/chess_game_gui/Chess_Game_GUI/src/ChessGame/model/ChessBoard.java</file>
-            <file>file:/D:/User%20Files/My%20Documents/AUT/BCIS/Program%20Design%20and%20Construction/GitHub/chess_game_gui/Chess_Game_GUI/src/ChessGame/main/Main.java</file>
-            <file>file:/D:/User%20Files/My%20Documents/AUT/BCIS/Program%20Design%20and%20Construction/GitHub/chess_game_gui/Chess_Game_GUI/src/ChessGame/gui/SquareGrid.java</file>
-            <file>file:/D:/User%20Files/My%20Documents/AUT/BCIS/Program%20Design%20and%20Construction/GitHub/chess_game_gui/Chess_Game_GUI/src/ChessGame/gui/ChessBoardUI.java</file>
+            <file>file:/C:/Users/Laz%20Bratton/Documents/GitHub/chess_game_gui/Chess_Game_GUI/src/ChessGame/model/Queen.java</file>
+            <file>file:/C:/Users/Laz%20Bratton/Documents/GitHub/chess_game_gui/Chess_Game_GUI/src/ChessGame/model/King.java</file>
+            <file>file:/C:/Users/Laz%20Bratton/Documents/GitHub/chess_game_gui/Chess_Game_GUI/Test%20Packages/ChessGame/model/RookTest.java</file>
+            <file>file:/C:/Users/Laz%20Bratton/Documents/GitHub/chess_game_gui/Chess_Game_GUI/Test%20Packages/ChessGame/model/KnightTest.java</file>
+            <file>file:/C:/Users/Laz%20Bratton/Documents/GitHub/chess_game_gui/Chess_Game_GUI/src/ChessGame/model/Bishop.java</file>
+            <file>file:/C:/Users/Laz%20Bratton/Documents/GitHub/chess_game_gui/Chess_Game_GUI/Test%20Packages/ChessGame/model/BishopTest.java</file>
+            <file>file:/C:/Users/Laz%20Bratton/Documents/GitHub/chess_game_gui/Chess_Game_GUI/src/ChessGame/model/Rook.java</file>
+            <file>file:/C:/Users/Laz%20Bratton/Documents/GitHub/chess_game_gui/Chess_Game_GUI/Test%20Packages/ChessGame/model/QueenTest.java</file>
+            <file>file:/C:/Users/Laz%20Bratton/Documents/GitHub/chess_game_gui/Chess_Game_GUI/src/ChessGame/model/ChessBoard.java</file>
+            <file>file:/C:/Users/Laz%20Bratton/Documents/GitHub/chess_game_gui/Chess_Game_GUI/src/ChessGame/model/Knight.java</file>
+            <file>file:/C:/Users/Laz%20Bratton/Documents/GitHub/chess_game_gui/Chess_Game_GUI/src/ChessGame/model/Piece.java</file>
         </group>
     </open-files>
 </project-private>
