@@ -9,6 +9,7 @@ import ChessGame.model.ChessBoard;
 import ChessGame.model.Chess;
 import ChessGame.model.Position;
 import ChessGame.model.Square;
+import java.awt.Color;
 
 /**
  *
@@ -41,9 +42,19 @@ public final class SquareGrid extends javax.swing.JPanel {
         Square newSquare = chess.getSquare(row, column);
         //csLabel.setText("P");
         csLabel.setText(newSquare.getPieceStringRepresentation());
-        csPanel.setBackground(new java.awt.Color(240, 240, 240));
-    }
+        
+        //csPanel.setBackground(new java.awt.Color(255, 255, 255));
+        
+        for (int i = 0; i < 64; i++) {
 
+        int row = (i / 8) % 2;
+        if (row == 0)
+            csPanel.setBackground( i % 2 == 0 ? Color.white : Color.black );
+        else
+            csPanel.setBackground( i % 2 == 0 ? Color.black : Color.white );
+        }
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
