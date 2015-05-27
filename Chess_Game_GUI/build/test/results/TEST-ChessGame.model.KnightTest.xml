@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="TheLeviathan" name="ChessGame.model.KnightTest" skipped="0" tests="3" time="0.088" timestamp="2015-05-27T03:52:50">
+<testsuite errors="0" failures="0" hostname="TheLeviathan" name="ChessGame.model.KnightTest" skipped="0" tests="4" time="0.089" timestamp="2015-05-27T07:28:38">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="GB" />
@@ -58,7 +58,7 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner ChessGame.model.KnightTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Laz Bratton\Documents\GitHub\chess_game_gui\Chess_Game_GUI\build\test\results\TEST-ChessGame.model.KnightTest.xml crashfile=C:\Users\Laz Bratton\Documents\GitHub\chess_game_gui\Chess_Game_GUI\build\junitvmwatcher3120757322284261659.properties propsfile=C:\Users\Laz Bratton\Documents\GitHub\chess_game_gui\Chess_Game_GUI\build\junit1911789088152785563.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner ChessGame.model.KnightTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Laz Bratton\Documents\GitHub\chess_game_gui\Chess_Game_GUI\build\test\results\TEST-ChessGame.model.KnightTest.xml crashfile=C:\Users\Laz Bratton\Documents\GitHub\chess_game_gui\Chess_Game_GUI\build\junitvmwatcher9187842351561869655.properties propsfile=C:\Users\Laz Bratton\Documents\GitHub\chess_game_gui\Chess_Game_GUI\build\junit3846599287335937120.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -100,7 +100,7 @@
     <property name="javac.debug" value="true" />
     <property name="javadoc.splitindex" value="true" />
     <property name="file.separator" value="\" />
-    <property name="javac.includesfile.binary" value="C:\Users\Laz Bratton\Documents\GitHub\chess_game_gui\Chess_Game_GUI\null736941651" />
+    <property name="javac.includesfile.binary" value="C:\Users\Laz Bratton\Documents\GitHub\chess_game_gui\Chess_Game_GUI\null303562982" />
     <property name="libs.junit_4.maven-pom" value="" />
     <property name="mkdist.disabled" value="false" />
     <property name="javac.test.processorpath" value="C:\Program Files\Java\jdk1.8.0_11\db\lib\derbyclient.jar:build/classes:C:\Program Files\NetBeans 8.0.1\platform\modules\ext\junit-4.10.jar" />
@@ -410,7 +410,8 @@
     <property name="libs.javaee-web-api-7.0.javadoc" value="C:\Program Files\NetBeans 8.0.1\enterprise\docs\javaee-doc-api.jar" />
     <property name="" value="======" />
   </properties>
-  <testcase classname="ChessGame.model.KnightTest" name="testMovesPossibleValidMoves" time="0.015" />
+  <testcase classname="ChessGame.model.KnightTest" name="testMovesPossiblePiecesToTake" time="0.015" />
+  <testcase classname="ChessGame.model.KnightTest" name="testMovesPossibleValidMoves" time="0.0" />
   <testcase classname="ChessGame.model.KnightTest" name="testMovesPossiblePiecesInPlace" time="0.0" />
   <testcase classname="ChessGame.model.KnightTest" name="testGetStringRepresentation" time="0.0" />
   <system-out><![CDATA[]]></system-out>

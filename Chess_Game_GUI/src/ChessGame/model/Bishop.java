@@ -47,7 +47,6 @@ public class Bishop extends Piece{
             if(!board.getSquare(newPos).isOccupied())
                 possibleMoves.add(board.getSquare(newPos));
             else {
-                
                 if(board.getSquare(newPos).getOccupyingPieceColor() != this.color)
                     possibleMoves.add(board.getSquare(newPos));
                 break outerloop;
@@ -61,9 +60,9 @@ public class Bishop extends Piece{
                 if(!board.getSquare(newPos).isOccupied())
                     possibleMoves.add(board.getSquare(newPos));
                 else {
-                if(board.getSquare(newPos).getOccupyingPieceColor() != color)
-                    possibleMoves.add(board.getSquare(newPos));
-                break outerloop;
+                    if(board.getSquare(newPos).getOccupyingPieceColor() != color)
+                        possibleMoves.add(board.getSquare(newPos));
+                    break outerloop;
                 }
             }
         }

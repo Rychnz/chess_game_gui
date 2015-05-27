@@ -86,7 +86,7 @@ public class RookTest {
         Position newPos = new Position(board, 6, 3);
         Position newPos1 = new Position(board, 7, 3);
         board.getSquare(blockPos).addPiece(pawn);
-        //pawn.setPosition(blockPos);
+        pawn.setPosition(blockPos);
         possibleMoves = rook.movesPossible();
         assertFalse(possibleMoves.contains(board.getSquare(blockPos)));
         assertFalse(possibleMoves.contains(board.getSquare(newPos)));
