@@ -53,7 +53,7 @@ public final class SquareGrid extends javax.swing.JPanel {
         else
             csPanel.setBackground( i % 2 == 0 ? Color.black : Color.white );
         }
-        
+
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -69,6 +69,11 @@ public final class SquareGrid extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
+        csPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                csPanelMouseReleased(evt);
+            }
+        });
         csPanel.setLayout(new java.awt.BorderLayout());
 
         csLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -79,6 +84,10 @@ public final class SquareGrid extends javax.swing.JPanel {
 
         add(csPanel, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void csPanelMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_csPanelMouseReleased
+        csLabel.setText("?");
+    }//GEN-LAST:event_csPanelMouseReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
