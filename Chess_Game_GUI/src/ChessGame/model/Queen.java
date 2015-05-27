@@ -37,7 +37,6 @@ public class Queen extends Piece{
         int rowNo = pos.getRow();
         int colNo = pos.getColumn();
         
-        //Bishop Styled movements
         outerloop:
         for(int i = rowNo; i<=7; i++) {
             for(int k = colNo; k<=7; k++) {
@@ -105,8 +104,6 @@ public class Queen extends Piece{
             }
         }
         
-        
-        //Rook Styled movements
         outerloop:
         for(int i = colNo + 1; i<=7; i++) {
             Position newPos = new Position(board, rowNo, i);
