@@ -43,6 +43,10 @@ public class Player {
         }
         
     }
+//    
+//    public Player(String name, int gamesWon, int gamesLost, int gamesPlayed, int score) {
+//        
+//    }
     
     /**
      * Get playerName method
@@ -73,7 +77,7 @@ public class Player {
         catch(SQLException e) {
             System.out.println("SQL exception occured" + e);
         }
-        score = newScore;
+        
     }
     
     /**
@@ -94,7 +98,6 @@ public class Player {
         catch(SQLException e) {
             System.out.println("SQL exception occured" + e);
         }
-        gamesWon = newGamesWon;
     }
     
     /**
@@ -115,7 +118,6 @@ public class Player {
         catch(SQLException e) {
             System.out.println("SQL exception occured" + e);
         }
-        gamesLost = newGamesLost;
     }
     
     /**
@@ -136,7 +138,6 @@ public class Player {
         catch(SQLException e) {
             System.out.println("SQL exception occured" + e);
         }
-        gamesPlayed = newGamesPlayed;
     }
     
     /**
@@ -145,7 +146,21 @@ public class Player {
      * @return score
      */
     public int getScore() {
-        return score;
+        try {
+            Connection con = DriverManager.getConnection
+                        ("jdbc:derby://localhost:1527/ChessGame");
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT SCORE FROM PLAYER WHERE "
+                    + "NAME = '" + playerName + "'");
+            while(rs.next()) {
+                score = rs.getInt("SCORE");
+            }
+            
+        }
+        catch(SQLException e) {
+            System.out.println("SQL exception occured" + e);
+        }
+        return this.score;
     }
     
     /**
@@ -154,7 +169,21 @@ public class Player {
      * @return gamesWon
      */
     public int getGamesWon() {
-        return gamesWon;
+        try {
+            Connection con = DriverManager.getConnection
+                        ("jdbc:derby://localhost:1527/ChessGame");
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT GAMESWON FROM PLAYER WHERE "
+                    + "NAME = '" + playerName + "'");
+            while(rs.next()) {
+                gamesWon = rs.getInt("GAMESWON");
+            }
+            
+        }
+        catch(SQLException e) {
+            System.out.println("SQL exception occured" + e);
+        }
+        return this.gamesWon;
     }
     
     /**
@@ -163,7 +192,21 @@ public class Player {
      * @return gamesLost
      */
     public int getGamesLost() {
-        return gamesLost;
+        try {
+            Connection con = DriverManager.getConnection
+                        ("jdbc:derby://localhost:1527/ChessGame");
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT GAMESLOST FROM PLAYER WHERE "
+                    + "NAME = '" + playerName + "'");
+            while(rs.next()) {
+                gamesLost = rs.getInt("GAMESLOST");
+            }
+            
+        }
+        catch(SQLException e) {
+            System.out.println("SQL exception occured" + e);
+        }
+        return this.gamesLost;
     }
     
     /**
@@ -172,7 +215,21 @@ public class Player {
      * @return 
      */
     public int getGamesPlayed() {
-        return gamesPlayed;
+        try {
+            Connection con = DriverManager.getConnection
+                        ("jdbc:derby://localhost:1527/ChessGame");
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT GAMESPLAYED FROM PLAYER WHERE "
+                    + "NAME = '" + playerName + "'");
+            while(rs.next()) {
+                gamesPlayed = rs.getInt("GAMESPLAYED");
+            }
+            
+        }
+        catch(SQLException e) {
+            System.out.println("SQL exception occured" + e);
+        }
+        return this.gamesPlayed;
     }
 }
 
