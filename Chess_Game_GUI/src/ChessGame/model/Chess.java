@@ -31,6 +31,7 @@ public class Chess {
         newBoard = new ChessBoard();
     }
     
+    
     /**
      * Two player GameBuilder constructor
      * 
@@ -42,6 +43,17 @@ public class Chess {
         this.playerTwo = playerTwo;
         
         newBoard = new ChessBoard();
+    }
+    
+    /**
+     * TESTING CONSTRUCTOR ONLY
+     * 
+     * @param playerOne 
+     */
+    public Chess(Player playerOne, ChessBoard board) {
+        this.playerOne = playerOne;
+        
+        newBoard = board;
     }
       
     public ChessBoard getChessBoard() {
@@ -71,7 +83,10 @@ public class Chess {
             success = true;
         }
         else {
-            throw new IllegalArgumentException("Square does not contain this piece!");
+            success = false;
+            System.out.println("Error moving piece! Either piece was not available "
+                    + "or an invalid movement has been made.");
+            
         }
         return success;
     }

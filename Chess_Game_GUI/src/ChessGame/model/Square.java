@@ -14,7 +14,7 @@ import java.util.Set;
  * @author Richard Johnston ID 0795795
  * @version 1.0 - 2015.04: Created
  */
-public abstract class Square {
+public class Square {
     
     public static final int MAX_PIECES = 1;
     
@@ -127,11 +127,4 @@ public abstract class Square {
         return result;
     }
     
-    
-    /**
-     * Returns the string representation of this square.
-     * 
-     * @return the string representation of this square
-     */
-    public abstract String getStringRepresentation();
 }

@@ -49,35 +49,12 @@ public class ChessBoardTest {
     }
 
     /**
-     * Test of getSquare method, of class ChessBoard.
-     */
-    @Test
-    public void testGetSquare() {
-        
-    }
-
-    /**
-     * Test of draw method, of class ChessBoard.
-     */
-    @Test
-    public void testDraw() {
-        
-    }
-
-    /**
-     * Test of getStringRepresentation method, of class ChessBoard.
-     */
-    @Test
-    public void testGetStringRepresentation() {
-        
-    }
-
-    /**
      * Test of withinBoundaries method, of class ChessBoard.
      */
     @Test
     public void testWithinBoundaries() {
-        
+        Position pos = new Position(board, 4, 4);
+        assertTrue(board.withinBoundaries(pos));
     }
     
 }
