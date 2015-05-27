@@ -41,19 +41,26 @@ public class Queen extends Piece{
         for(int i = rowNo; i<=7; i++) {
             for(int k = colNo; k<=7; k++) {
                 Position newPos = new Position(board, i, k);
-                if(!board.getSquare(newPos).isOccupied())
+            if(!board.getSquare(newPos).isOccupied())
+                possibleMoves.add(board.getSquare(newPos));
+            else {
+                if(board.getSquare(newPos).getOccupyingPieceColor() != this.color)
                     possibleMoves.add(board.getSquare(newPos));
-                else break outerloop;
+                break outerloop;
+                }
             }
         }
-        
         outerloop:
         for(int i = rowNo; i<=7; i++) {
             for(int k = colNo; k>=0; k--) {
                 Position newPos = new Position(board, i, k);
                 if(!board.getSquare(newPos).isOccupied())
                     possibleMoves.add(board.getSquare(newPos));
-                else break outerloop;
+                else {
+                    if(board.getSquare(newPos).getOccupyingPieceColor() != color)
+                        possibleMoves.add(board.getSquare(newPos));
+                    break outerloop;
+                }
             }
         }
         
@@ -61,9 +68,13 @@ public class Queen extends Piece{
         for(int i = rowNo; i>=0; i--) {
             for(int k = colNo; k>=0; k--) {
                 Position newPos = new Position(board, i, k);
-                if(!board.getSquare(newPos).isOccupied())
+            if(!board.getSquare(newPos).isOccupied())
+                possibleMoves.add(board.getSquare(newPos));
+            else {
+                if(board.getSquare(newPos).getOccupyingPieceColor() != color)
                     possibleMoves.add(board.getSquare(newPos));
-                else break outerloop;
+                break outerloop;
+                }
             }
         }
         
@@ -71,9 +82,13 @@ public class Queen extends Piece{
         for(int i = rowNo; i>=0; i--) {
             for(int k = colNo; k<=7; k++) {
                 Position newPos = new Position(board, i, k);
-                if(!board.getSquare(newPos).isOccupied())
+            if(!board.getSquare(newPos).isOccupied())
+                possibleMoves.add(board.getSquare(newPos));
+            else {
+                if(board.getSquare(newPos).getOccupyingPieceColor() != color)
                     possibleMoves.add(board.getSquare(newPos));
-                else break outerloop;
+                break outerloop;
+                }
             }
         }
         
@@ -82,7 +97,11 @@ public class Queen extends Piece{
             Position newPos = new Position(board, i, colNo);
             if(!board.getSquare(newPos).isOccupied())
                 possibleMoves.add(board.getSquare(newPos));
-            else break outerloop;
+            else {
+                if(board.getSquare(newPos).getOccupyingPieceColor() != color)
+                    possibleMoves.add(board.getSquare(newPos));
+                break outerloop;
+            }
         }
         
         outerloop:
@@ -90,7 +109,11 @@ public class Queen extends Piece{
             Position newPos = new Position(board, rowNo, i);
             if(!board.getSquare(newPos).isOccupied())
                 possibleMoves.add(board.getSquare(newPos));
-            else break outerloop;
+            else {
+                if(board.getSquare(newPos).getOccupyingPieceColor() != color)
+                    possibleMoves.add(board.getSquare(newPos));
+                break outerloop;
+            }
         }
         
         outerloop:
@@ -98,7 +121,11 @@ public class Queen extends Piece{
             Position newPos = new Position(board, i, colNo);
             if(!board.getSquare(newPos).isOccupied())
                 possibleMoves.add(board.getSquare(newPos));
-            else break outerloop;
+            else {
+                if(board.getSquare(newPos).getOccupyingPieceColor() != color)
+                    possibleMoves.add(board.getSquare(newPos));
+                break outerloop;
+            }
         }
         
         outerloop:
@@ -106,7 +133,11 @@ public class Queen extends Piece{
             Position newPos = new Position(board, rowNo, i);
             if(!board.getSquare(newPos).isOccupied())
                 possibleMoves.add(board.getSquare(newPos));
-            else break outerloop;
+            else {
+                if(board.getSquare(newPos).getOccupyingPieceColor() != color)
+                    possibleMoves.add(board.getSquare(newPos));
+                break outerloop;
+            }
         }
         
         return possibleMoves;

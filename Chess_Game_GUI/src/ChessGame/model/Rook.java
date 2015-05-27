@@ -35,54 +35,54 @@ public class Rook extends Piece {
     public Set movesPossible() {
         possibleMoves.clear();
         Position pos = getPosition();
-        ChessBoard currentBoard = pos.getBoard();
+        ChessBoard board = pos.getBoard();
         int rowNo = pos.getRow();
         int colNo = pos.getColumn();
         
         outerloop:
         for(int i = rowNo + 1; i<=7; i++) {
-            Position newPos = new Position(currentBoard, i, colNo);
-            if(!currentBoard.getSquare(newPos).isOccupied())
-                possibleMoves.add(currentBoard.getSquare(newPos));
+            Position newPos = new Position(board, i, colNo);
+            if(!board.getSquare(newPos).isOccupied())
+                possibleMoves.add(board.getSquare(newPos));
             else {
-                if(currentBoard.getSquare(newPos).getOccupyingPieceColor() != color)
-                    possibleMoves.add(currentBoard.getSquare(newPos));
+                if(board.getSquare(newPos).getOccupyingPieceColor() != color)
+                    possibleMoves.add(board.getSquare(newPos));
                 break outerloop;
             }
         }
         
         outerloop:
         for(int i = colNo + 1; i<=7; i++) {
-            Position newPos = new Position(currentBoard, rowNo, i);
-            if(!currentBoard.getSquare(newPos).isOccupied())
-                possibleMoves.add(currentBoard.getSquare(newPos));
+            Position newPos = new Position(board, rowNo, i);
+            if(!board.getSquare(newPos).isOccupied())
+                possibleMoves.add(board.getSquare(newPos));
             else {
-                if(currentBoard.getSquare(newPos).getOccupyingPieceColor() != color)
-                    possibleMoves.add(currentBoard.getSquare(newPos));
+                if(board.getSquare(newPos).getOccupyingPieceColor() != color)
+                    possibleMoves.add(board.getSquare(newPos));
                 break outerloop;
             }
         }
         
         outerloop:
         for(int i = rowNo - 1; i>=0; i--) {
-            Position newPos = new Position(currentBoard, i, colNo);
-            if(!currentBoard.getSquare(newPos).isOccupied())
-                possibleMoves.add(currentBoard.getSquare(newPos));
+            Position newPos = new Position(board, i, colNo);
+            if(!board.getSquare(newPos).isOccupied())
+                possibleMoves.add(board.getSquare(newPos));
             else {
-                if(currentBoard.getSquare(newPos).getOccupyingPieceColor() != color)
-                    possibleMoves.add(currentBoard.getSquare(newPos));
+                if(board.getSquare(newPos).getOccupyingPieceColor() != color)
+                    possibleMoves.add(board.getSquare(newPos));
                 break outerloop;
             }
         }
         
         outerloop:
         for(int i = colNo - 1; i>=0; i--) {
-            Position newPos = new Position(currentBoard, rowNo, i);
-            if(!currentBoard.getSquare(newPos).isOccupied())
-                possibleMoves.add(currentBoard.getSquare(newPos));
+            Position newPos = new Position(board, rowNo, i);
+            if(!board.getSquare(newPos).isOccupied())
+                possibleMoves.add(board.getSquare(newPos));
             else {
-                if(currentBoard.getSquare(newPos).getOccupyingPieceColor() != color)
-                    possibleMoves.add(currentBoard.getSquare(newPos));
+                if(board.getSquare(newPos).getOccupyingPieceColor() != color)
+                    possibleMoves.add(board.getSquare(newPos));
                 break outerloop;
             }
         }

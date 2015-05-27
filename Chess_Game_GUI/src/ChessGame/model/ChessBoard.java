@@ -16,8 +16,8 @@ import java.awt.Color;
 public class ChessBoard {
     
     //Set ChessBoard size to 8x8
-    private final int         numRows = 9;
-    private final int         numColumns = 9;
+    private final int         numRows = 8;
+    private final int         numColumns = 8;
     private Square [][] squares;
     //private Piece piece;
     private Square square;
