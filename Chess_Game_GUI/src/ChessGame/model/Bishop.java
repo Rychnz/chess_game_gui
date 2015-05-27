@@ -41,7 +41,6 @@ public class Bishop extends Piece{
         
         outerloop:
         for(int i = rowNo; i<=7; i++) {
-            innerloop:
             for(int k = colNo; k<=7; k++) {
                 Position newPos = new Position(board, i, k);
             if(!board.getSquare(newPos).isOccupied())
