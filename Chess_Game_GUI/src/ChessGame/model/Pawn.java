@@ -20,7 +20,7 @@ public class Pawn extends Piece {
 
     
     public Pawn(Color color) {
-        super();
+        super(color);
         
         this.color = color;
         moves = new HashSet<>();
@@ -57,9 +57,9 @@ public class Pawn extends Piece {
         
         if(!forwardSquare.isOccupied())
             moves.add(forwardSquare);
-        if(diagonalLeftSquare.isOccupied())
+        if(diagonalLeftSquare.isOccupied() && diagonalLeftSquare.getOccupyingPieceColor() != color)
             moves.add(diagonalLeftSquare);
-        if(diagonalRightSquare.isOccupied())
+        if(diagonalRightSquare.isOccupied() && diagonalLeftSquare.getOccupyingPieceColor() != color)
             moves.add(diagonalRightSquare);
         
         return moves;

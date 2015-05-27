@@ -36,7 +36,7 @@ public class KingTest {
     
     @Before
     public void setUp() {
-        board = new ChessBoard();
+        board = new ChessBoard("test");
         position = new Position(board, 3, 3);
         king = new King(Color.WHITE);
         king.setPosition(position);
@@ -92,15 +92,44 @@ public class KingTest {
         Position right = new Position(board, 3, 2);
         Position left = new Position(board, 3, 4);
         Position backwards = new Position(board, 2, 3);
+        
         Pawn pawn = new Pawn(Color.WHITE);
+        
         board.getSquare(forward).addPiece(pawn);
         board.getSquare(right).addPiece(pawn);
         board.getSquare(left).addPiece(pawn);
         board.getSquare(backwards).addPiece(pawn);
+        
         possibleMoves = king.movesPossible();
+        
         assertFalse(possibleMoves.contains(board.getSquare(forward)));
         assertFalse(possibleMoves.contains(board.getSquare(right)));
         assertFalse(possibleMoves.contains(board.getSquare(left)));
         assertFalse(possibleMoves.contains(board.getSquare(backwards)));
+    }
+    
+    /**
+     * Test of movesPossible method, of class King.
+     */
+    @Test
+    public void testMovesPossiblePiecesToTake() {
+        Position forward = new Position(board, 4, 3);
+        Position right = new Position(board, 3, 2);
+        Position left = new Position(board, 3, 4);
+        Position backwards = new Position(board, 2, 3);
+        
+        Pawn pawn = new Pawn(Color.BLACK);
+        
+        board.getSquare(forward).addPiece(pawn);
+        board.getSquare(right).addPiece(pawn);
+        board.getSquare(left).addPiece(pawn);
+        board.getSquare(backwards).addPiece(pawn);
+        
+        possibleMoves = king.movesPossible();
+        
+        assertTrue(possibleMoves.contains(board.getSquare(forward)));
+        assertTrue(possibleMoves.contains(board.getSquare(right)));
+        assertTrue(possibleMoves.contains(board.getSquare(left)));
+        assertTrue(possibleMoves.contains(board.getSquare(backwards)));
     }
 }

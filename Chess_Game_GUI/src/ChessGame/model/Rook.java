@@ -19,7 +19,7 @@ public class Rook extends Piece {
     private Color color;
     
     public Rook(Color color) {
-        super();
+        super(color);
         
         this.color = color;
         possibleMoves = new HashSet<>();
@@ -44,7 +44,11 @@ public class Rook extends Piece {
             Position newPos = new Position(currentBoard, i, colNo);
             if(!currentBoard.getSquare(newPos).isOccupied())
                 possibleMoves.add(currentBoard.getSquare(newPos));
-            else break outerloop;
+            else {
+                if(currentBoard.getSquare(newPos).getOccupyingPieceColor() != color)
+                    possibleMoves.add(currentBoard.getSquare(newPos));
+                break outerloop;
+            }
         }
         
         outerloop:
@@ -52,7 +56,11 @@ public class Rook extends Piece {
             Position newPos = new Position(currentBoard, rowNo, i);
             if(!currentBoard.getSquare(newPos).isOccupied())
                 possibleMoves.add(currentBoard.getSquare(newPos));
-            else break outerloop;
+            else {
+                if(currentBoard.getSquare(newPos).getOccupyingPieceColor() != color)
+                    possibleMoves.add(currentBoard.getSquare(newPos));
+                break outerloop;
+            }
         }
         
         outerloop:
@@ -60,7 +68,11 @@ public class Rook extends Piece {
             Position newPos = new Position(currentBoard, i, colNo);
             if(!currentBoard.getSquare(newPos).isOccupied())
                 possibleMoves.add(currentBoard.getSquare(newPos));
-            else break outerloop;
+            else {
+                if(currentBoard.getSquare(newPos).getOccupyingPieceColor() != color)
+                    possibleMoves.add(currentBoard.getSquare(newPos));
+                break outerloop;
+            }
         }
         
         outerloop:
@@ -68,7 +80,11 @@ public class Rook extends Piece {
             Position newPos = new Position(currentBoard, rowNo, i);
             if(!currentBoard.getSquare(newPos).isOccupied())
                 possibleMoves.add(currentBoard.getSquare(newPos));
-            else break outerloop;
+            else {
+                if(currentBoard.getSquare(newPos).getOccupyingPieceColor() != color)
+                    possibleMoves.add(currentBoard.getSquare(newPos));
+                break outerloop;
+            }
         }
         
         

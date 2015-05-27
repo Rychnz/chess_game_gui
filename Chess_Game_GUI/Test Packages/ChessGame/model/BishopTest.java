@@ -5,14 +5,10 @@
  */
 package ChessGame.model;
 
-import ChessGame.model.Bishop;
 import java.awt.Color;
-import java.util.HashSet;
 import java.util.Set;
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -81,16 +77,44 @@ public class BishopTest {
      */
     @Test
     public void testMovesPossibleInvalidMove() {
-        Bishop newB = new Bishop(Color.WHITE);
-        Position pos1 = new Position(board, 5, 5);
-        Position pos2 = new Position(board, 6, 6);
-        Position pos3 = new Position(board, 7, 7);
-        board.getSquare(pos1).addPiece(newB);
+        Pawn pawn = new Pawn(Color.WHITE);
+        Position blockPos = new Position(board, 5, 5);
+        Position newPos = new Position(board, 6, 6);
+        Position newPos1 = new Position(board, 7, 7);
+        board.getSquare(blockPos).addPiece(pawn);
+        //pawn.setPosition(blockPos);
+        
         possibleMoves = bishop.movesPossible();
-        assertFalse(possibleMoves.contains(board.getSquare(pos1)));
-        assertFalse(possibleMoves.contains(board.getSquare(pos2)));
-        assertFalse(possibleMoves.contains(board.getSquare(pos3)));
+        
+        assertFalse(possibleMoves.contains(board.getSquare(blockPos)));
+        assertFalse(possibleMoves.contains(board.getSquare(newPos)));
+        assertFalse(possibleMoves.contains(board.getSquare(newPos1)));
     }
     
-    
+    /**
+     * Test of movesPossible method, of class Bishop.
+     * 
+     * Tests a range of valid movements from bishop
+     */
+    @Test
+    public void testMovesPossiblePiecesToTake() {
+        Position pos1 = new Position(board, 7, 7);
+        Position pos2 = new Position(board, 0, 6);
+        Position pos3 = new Position(board, 6, 0);
+        Position pos4 = new Position(board, 0, 0);
+        
+        Pawn pawn = new Pawn(Color.BLACK);
+        
+        board.getSquare(pos1).addPiece(pawn);
+        board.getSquare(pos2).addPiece(pawn);
+        board.getSquare(pos3).addPiece(pawn);
+        board.getSquare(pos4).addPiece(pawn);
+        
+        possibleMoves = bishop.movesPossible();
+        
+        assertTrue(possibleMoves.contains(board.getSquare(pos1)));
+        assertTrue(possibleMoves.contains(board.getSquare(pos2)));
+        assertTrue(possibleMoves.contains(board.getSquare(pos3)));
+        assertTrue(possibleMoves.contains(board.getSquare(pos4)));
+    }
 }

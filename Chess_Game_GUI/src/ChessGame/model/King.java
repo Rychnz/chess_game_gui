@@ -19,7 +19,7 @@ public class King extends Piece {
     private HashSet<Square> possibleMoves;
     
     public King(Color color) {
-        super();
+        super(color);
         
         this.color = color;
         possibleMoves = new HashSet<>();
@@ -39,19 +39,23 @@ public class King extends Piece {
         int colNo = pos.getColumn();
         
         Position northPosition = new Position(pos.getBoard(), (rowNo + 1), colNo);
-        if(!currentBoard.getSquare(northPosition).isOccupied())
+        if(!currentBoard.getSquare(northPosition).isOccupied() || 
+                (currentBoard.getSquare(northPosition).getOccupyingPieceColor() != color))
             possibleMoves.add(currentBoard.getSquare(northPosition));
         
         Position southPosition = new Position(pos.getBoard(), rowNo - 1, colNo);
-        if(!currentBoard.getSquare(southPosition).isOccupied())
+        if(!currentBoard.getSquare(southPosition).isOccupied()|| 
+                (currentBoard.getSquare(southPosition).getOccupyingPieceColor() != color))
             possibleMoves.add(currentBoard.getSquare(southPosition));
         
         Position eastPosition = new Position(pos.getBoard(), rowNo, colNo + 1);
-        if(!currentBoard.getSquare(eastPosition).isOccupied())
+        if(!currentBoard.getSquare(eastPosition).isOccupied()|| 
+                (currentBoard.getSquare(eastPosition).getOccupyingPieceColor() != color))
             possibleMoves.add(currentBoard.getSquare(eastPosition));
         
         Position westPosition = new Position(pos.getBoard(), rowNo, colNo - 1);
-        if(!currentBoard.getSquare(westPosition).isOccupied())
+        if(!currentBoard.getSquare(westPosition).isOccupied()|| 
+                (currentBoard.getSquare(westPosition).getOccupyingPieceColor() != color))
             possibleMoves.add(currentBoard.getSquare(westPosition));
         
         

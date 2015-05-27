@@ -16,7 +16,7 @@ import java.util.Set;
 abstract public class Piece {
     private Position position;
     private boolean alive;
-    private Color pieceColour;
+    private Color pieceColor;
     private Set<Square> possibleMoves;
     
     
@@ -25,10 +25,10 @@ abstract public class Piece {
      * 
      * @param alive - designates whether a piece is active on the board or not 
      */
-    Piece() {
+    Piece(Color color) {
         this.alive = true;
         this.position = null;
-        this.pieceColour = null;
+        this.pieceColor = color;
         this.possibleMoves = new HashSet<>();
     }
     
@@ -71,10 +71,9 @@ abstract public class Piece {
     /**
      * Gets the colour of the individual piece
      * 
-     * @return true if black, false if white 
      */
-    public boolean isPieceBlack() {
-        return pieceColour == Color.BLACK;
+    public Color getPieceColor() {
+        return pieceColor;
     }
     
     /**

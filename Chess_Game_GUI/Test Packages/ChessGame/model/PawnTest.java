@@ -38,7 +38,7 @@ public class PawnTest {
     public void setUp() {
         
         
-        board = new ChessBoard();
+        board = new ChessBoard("test");
         position = new Position(board, 1, 1);
         position2 = new Position(board, 6, 6);
         
@@ -121,7 +121,7 @@ public class PawnTest {
     public void testMovesPossiblePieceToTake() {
         Position newPosition = new Position(board, 2, 2);
         Position newPos1 = new Position(board, 2, 0);
-        Pawn newPawn = new Pawn(Color.WHITE);
+        Pawn newPawn = new Pawn(Color.BLACK);
         
         board.getSquare(newPosition).addPiece(newPawn);
         board.getSquare(newPos1).addPiece(newPawn);
@@ -132,10 +132,22 @@ public class PawnTest {
     }
     
     /**
+     * Test of getPieceColor, of class Piece.
+     * 
+     * 
+     */
+    @Test
+    public void testGetPieceColor() {
+        assertEquals(Color.WHITE, pawn.getPieceColor());
+    }
+    
+    /**
      * Tests a scenario where the piece does not have a position
      */
     @Test(expected=NullPointerException.class)
     public void testMovesPossibleNoPosition() {
         possibleMoves = pawn.movesPossible();   
     }
+    
+    
 }
