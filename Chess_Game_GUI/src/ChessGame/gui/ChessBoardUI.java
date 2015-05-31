@@ -78,8 +78,9 @@ public class ChessBoardUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        csSquare.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         csSquare.setPreferredSize(new java.awt.Dimension(500, 400));
-        csSquare.setLayout(new java.awt.BorderLayout());
+        csSquare.setLayout(new java.awt.CardLayout());
         getContentPane().add(csSquare, java.awt.BorderLayout.CENTER);
 
         pack();

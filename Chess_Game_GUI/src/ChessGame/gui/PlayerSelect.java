@@ -282,6 +282,7 @@ public class PlayerSelect extends javax.swing.JFrame {
     }//GEN-LAST:event_selectPlayerTwoActionPerformed
 
     private void jButtonStartGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStartGameActionPerformed
+        
         this.setVisible(false);
         Chess chess = new Chess(playerOne, playerTwo);
         new ChessBoardUI(chess).setVisible(true);

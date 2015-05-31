@@ -24,56 +24,48 @@ public class Player {
      * @param Name for the player 
      */
     public Player(String name) {
+        playerName = name;
+        gamesWon = 0;
+        gamesLost = 0;
+        gamesPlayed = 0;
+        score = 0;
         try {
-            Connection con = DriverManager.getConnection
+                Connection con = DriverManager.getConnection
                         ("jdbc:derby://localhost:1527/ChessGame");
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT COUNT(*) AS total FROM PLAYER"
-                    + "HAVING NAME = '" + name + "'");
-            int count = rs.getInt("total");
-            if(count > 0) {
-                try {
-
-                    ResultSet rs1 = stmt.executeQuery("SELECT * FROM PLAYER WHERE "
+                Statement stmt = con.createStatement();
+                ResultSet rs1 = stmt.executeQuery("SELECT * FROM PLAYER WHERE "
                             + "NAME = '" + name + "'");
+                if(rs1.wasNull())
+                    while(rs1.next()) {
+                        score = rs1.getInt("SCORE");
+                        gamesWon = rs1.getInt("GAMESWON");
+                        gamesLost = rs1.getInt("GAMESLOST");
+                        gamesPlayed = rs1.getInt("GAMESPLAYED");
+                    }
+                else {
+                    try {
             
-                while(rs.next()) {
-                    score = rs1.getInt("SCORE");
-                    gamesWon = rs1.getInt("GAMESWON");
-                    gamesLost = rs1.getInt("GAMESLOST");
-                    gamesPlayed = rs1.getInt("GAMESPLAYED");
-                }
-            
-                }
-                catch(SQLException e) {
-                    System.out.println("SQL exception occured" + e);
-                    }   
-            }
-            else {
-                playerName = name;
-                gamesWon = 0;
-                gamesLost = 0;
-                gamesPlayed = 0;
-                score = 0;
-                try {
-
-                    String insert = "INSERT INTO PLAYER VALUES ('" + playerName + "', " + score + ", " +
-                        gamesPlayed + ", " + gamesWon + ", " + gamesLost + ")";
-                    stmt.execute(insert);
-            
-                }
-                catch(SQLException e) {
-                    System.out.println("SQL exception occured" + e);
-                }       
-            }
+            String insert = "INSERT INTO PLAYER VALUES ('" + playerName + "', " + score + ", " +
+                gamesPlayed + ", " + gamesWon + ", " + gamesLost + ")";
+            stmt.execute(insert);
             
         }
         catch(SQLException e) {
             System.out.println("SQL exception occured" + e);
         }
+                }
+            
+                }
+                catch(SQLException e) {
+                    System.out.println("SQL exception occured" + e);
+                    }  
         
         
     }
+//    
+//    public Player(String name, int gamesWon, int gamesLost, int gamesPlayed, int score) {
+//        
+//    }
     
     /**
      * Get playerName method
@@ -86,7 +78,24 @@ public class Player {
         return playerName;
     }
     
-    
+//    public Player getPlayer(String name) {
+//        try {
+//            Connection con = DriverManager.getConnection
+//                        ("jdbc:derby://localhost:1527/ChessGame");
+//            Statement stmt = con.createStatement();
+//            ResultSet rs = stmt.executeQuery("SELECT * FROM PLAYER WHERE "
+//                    + "NAME = '" + name + "'");
+//            //Player savedPlayer = new Player(name)
+//            while(rs.next()) {
+//                score = rs.getInt("SCORE");
+//            }
+//            
+//        }
+//        catch(SQLException e) {
+//            System.out.println("SQL exception occured" + e);
+//        }
+//    }
+//    
     /**
      * Sets score of player
      * 
