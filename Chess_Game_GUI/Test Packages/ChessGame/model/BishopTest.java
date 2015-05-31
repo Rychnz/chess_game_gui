@@ -77,7 +77,7 @@ public class BishopTest {
      */
     @Test
     public void testMovesPossibleInvalidMove() {
-        Pawn pawn = new Pawn(Color.WHITE);
+        Pawn pawn = new Pawn(Color.BLACK);
         Position blockPos = new Position(board, 5, 5);
         Position newPos = new Position(board, 6, 6);
         Position newPos1 = new Position(board, 7, 7);
@@ -86,7 +86,7 @@ public class BishopTest {
         
         possibleMoves = bishop.movesPossible();
         
-        assertFalse(possibleMoves.contains(board.getSquare(blockPos)));
+        assertTrue(possibleMoves.contains(board.getSquare(blockPos)));
         assertFalse(possibleMoves.contains(board.getSquare(newPos)));
         assertFalse(possibleMoves.contains(board.getSquare(newPos1)));
     }
