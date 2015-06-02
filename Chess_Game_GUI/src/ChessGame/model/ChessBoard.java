@@ -150,6 +150,17 @@ public class ChessBoard {
     }
     
     /**
+     * Gets square array for other classes to use when referencing movement.
+     * Should be able to use for movement.
+     * - Laz
+     * 
+     * @return squares 
+     */
+    public Square[][] getSquareArray(){
+        return squares;
+    }
+    
+    /**
      * Checks to ensure position is within boundaries of board,
      * used by other methods as a convenience
      *
