@@ -5,6 +5,7 @@
  */
 package ChessGame.model;
 import java.sql.*;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Laz Bratton
@@ -35,37 +36,34 @@ public class Player {
                 Statement stmt = con.createStatement();
                 ResultSet rs1 = stmt.executeQuery("SELECT * FROM PLAYER WHERE "
                             + "NAME = '" + name + "'");
-                if(rs1.wasNull())
+                if(rs1.getRow() == 1) {
+                    playerName = name;
                     while(rs1.next()) {
                         score = rs1.getInt("SCORE");
                         gamesWon = rs1.getInt("GAMESWON");
                         gamesLost = rs1.getInt("GAMESLOST");
                         gamesPlayed = rs1.getInt("GAMESPLAYED");
                     }
+                }
                 else {
                     try {
-            
-            String insert = "INSERT INTO PLAYER VALUES ('" + playerName + "', " + score + ", " +
-                gamesPlayed + ", " + gamesWon + ", " + gamesLost + ")";
-            stmt.execute(insert);
+                        String insert = "INSERT INTO PLAYER VALUES ('" + playerName + "', " + score + ", " +
+                            gamesPlayed + ", " + gamesWon + ", " + gamesLost + ")";
+                        stmt.execute(insert);
+                    }
+                    catch(SQLException e) {
+                        System.out.println("SQL exception occured" + e);
+                        JOptionPane.showMessageDialog(null, "Sorry, this player already exists, or your name exceeds the character count of 10.");
+                        
+                    }
+                }
             
         }
         catch(SQLException e) {
             System.out.println("SQL exception occured" + e);
-        }
-                }
-            
-                }
-                catch(SQLException e) {
-                    System.out.println("SQL exception occured" + e);
-                    }  
-        
-        
+            //JOptionPane.showMessageDialog(null, "Sorry, this player already exists, or your name exceeds the character count of 10.");
+            }   
     }
-//    
-//    public Player(String name, int gamesWon, int gamesLost, int gamesPlayed, int score) {
-//        
-//    }
     
     /**
      * Get playerName method

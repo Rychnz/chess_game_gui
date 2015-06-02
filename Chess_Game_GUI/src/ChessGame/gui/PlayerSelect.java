@@ -10,6 +10,7 @@ import ChessGame.model.Player;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 
@@ -67,10 +68,8 @@ public class PlayerSelect extends javax.swing.JFrame {
         jComboPlayerOne = new javax.swing.JComboBox();
         jComboPlayerTwo = new javax.swing.JComboBox();
         jTextPlayerOne = new javax.swing.JTextField();
-        jTextPlayerTwo = new javax.swing.JTextField();
         createPlayerOne = new javax.swing.JButton();
         selectPlayerOne = new javax.swing.JButton();
-        createPlayerTwo = new javax.swing.JButton();
         selectPlayerTwo = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -115,13 +114,6 @@ public class PlayerSelect extends javax.swing.JFrame {
             }
         });
 
-        createPlayerTwo.setText("Create");
-        createPlayerTwo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createPlayerTwoActionPerformed(evt);
-            }
-        });
-
         selectPlayerTwo.setText("Select");
         selectPlayerTwo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,13 +136,9 @@ public class PlayerSelect extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(playerOneSelectLayout.createSequentialGroup()
-                        .addGroup(playerOneSelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextPlayerOne, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboPlayerOne, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jComboPlayerOne, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(playerOneSelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboPlayerTwo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextPlayerTwo)))))
+                        .addComponent(jComboPlayerTwo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(playerOneSelectLayout.createSequentialGroup()
                 .addGap(108, 108, 108)
                 .addComponent(selectPlayerOne)
@@ -158,38 +146,34 @@ public class PlayerSelect extends javax.swing.JFrame {
                 .addComponent(selectPlayerTwo)
                 .addGap(83, 83, 83))
             .addGroup(playerOneSelectLayout.createSequentialGroup()
-                .addGap(107, 107, 107)
-                .addComponent(createPlayerOne)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(createPlayerTwo)
-                .addGap(88, 88, 88))
-            .addGroup(playerOneSelectLayout.createSequentialGroup()
-                .addGap(116, 116, 116)
+                .addGap(105, 105, 105)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addGap(146, 146, 146))
+                .addGap(109, 109, 109))
+            .addGroup(playerOneSelectLayout.createSequentialGroup()
+                .addGroup(playerOneSelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(playerOneSelectLayout.createSequentialGroup()
+                        .addGap(241, 241, 241)
+                        .addComponent(createPlayerOne))
+                    .addGroup(playerOneSelectLayout.createSequentialGroup()
+                        .addGap(143, 143, 143)
+                        .addComponent(jTextPlayerOne, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         playerOneSelectLayout.setVerticalGroup(
             playerOneSelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(playerOneSelectLayout.createSequentialGroup()
                 .addComponent(jLabel1)
-                .addGap(55, 55, 55)
-                .addGroup(playerOneSelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
                 .addGap(18, 18, 18)
+                .addComponent(jTextPlayerOne, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
+                .addComponent(createPlayerOne)
+                .addGap(48, 48, 48)
                 .addGroup(playerOneSelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextPlayerOne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextPlayerTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(playerOneSelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(playerOneSelectLayout.createSequentialGroup()
-                        .addComponent(createPlayerOne)
-                        .addGap(7, 7, 7))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, playerOneSelectLayout.createSequentialGroup()
-                        .addComponent(createPlayerTwo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2))
+                .addGap(16, 16, 16)
                 .addGroup(playerOneSelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboPlayerTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboPlayerOne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -265,12 +249,6 @@ public class PlayerSelect extends javax.swing.JFrame {
         fillCombo();
     }//GEN-LAST:event_createPlayerOneActionPerformed
 
-    private void createPlayerTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createPlayerTwoActionPerformed
-        String name = jTextPlayerTwo.getText();
-        Player newPlayer = new Player(name);
-        fillCombo();
-    }//GEN-LAST:event_createPlayerTwoActionPerformed
-
     private void jComboPlayerTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboPlayerTwoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboPlayerTwoActionPerformed
@@ -325,7 +303,6 @@ public class PlayerSelect extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton createPlayerOne;
-    private javax.swing.JButton createPlayerTwo;
     private javax.swing.JButton jButtonStartGame;
     private javax.swing.JComboBox jComboPlayerOne;
     private javax.swing.JComboBox jComboPlayerTwo;
@@ -333,7 +310,6 @@ public class PlayerSelect extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField jTextPlayerOne;
-    private javax.swing.JTextField jTextPlayerTwo;
     private javax.swing.JPanel playerOneSelect;
     private javax.swing.JPanel playerTwoSelect;
     private javax.swing.JButton selectPlayerOne;
