@@ -7,6 +7,7 @@ package ChessGame.gui;
 
 import ChessGame.model.ChessBoard;
 import ChessGame.model.Chess;
+import ChessGame.model.Piece;
 import ChessGame.model.Position;
 import ChessGame.model.Square;
 import java.awt.Color;
@@ -19,7 +20,8 @@ public final class SquareGrid extends javax.swing.JPanel {
     
     private ChessBoard board;
     private Chess chess;
-    private Square square;
+    //private Square square;
+    private Square [][] squares;
     private Position pos;
     private int row;
     private int column;
@@ -70,6 +72,9 @@ public final class SquareGrid extends javax.swing.JPanel {
         setLayout(new java.awt.BorderLayout());
 
         csPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                csPanelMousePressed(evt);
+            }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 csPanelMouseReleased(evt);
             }
@@ -86,8 +91,24 @@ public final class SquareGrid extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void csPanelMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_csPanelMouseReleased
-        csLabel.setText("?");
+        //csLabel.setText("?");
     }//GEN-LAST:event_csPanelMouseReleased
+
+    private void csPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_csPanelMousePressed
+        int colNo = 0;
+        int rowNo = 1;
+        int newColNo = 0;
+        int newRowNo = 2;
+        
+        ChessBoard cBoard = chess.getChessBoard();
+        //ChessBoard cBoard = new ChessBoard();
+        
+        Position piecePos = new Position(cBoard, rowNo, colNo);
+        Piece p = cBoard.getSquare(piecePos).getOccupyingPiece();
+        chess.movePiece(squares[rowNo][colNo], squares[newRowNo][newColNo], p);
+        
+        update();
+    }//GEN-LAST:event_csPanelMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
