@@ -18,6 +18,7 @@
   <SubComponents>
     <Container class="javax.swing.JPanel" name="csPanel">
       <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="csPanelMousePressed"/>
         <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="csPanelMouseReleased"/>
       </Events>
       <Constraints>

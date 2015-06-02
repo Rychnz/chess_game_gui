@@ -81,57 +81,57 @@ public class ChessBoard {
     }
     
     
-//    /**
-//     * Creates a console text representation of the ChessBoard.
-//     */
-//    public void draw(){
-//        System.out.println(getStringRepresentation());
-//    }
+    /**
+     * Creates a console text representation of the ChessBoard.
+     *//*
+    public void draw(){
+        System.out.println(getStringRepresentation());
+    }*/
     
-//    /**
-//     * Returns a string with the chessboard pieces for printing to console purposes.
-//     * 
-//     * @return a string that represents the ChessBoard
-//     */
-//    public String getStringRepresentation()
-//    {
-//        String output = "";
-//        final int CELL_SIZE = 3;
-//        
-//        // create the horizontal line as a string
-//        String horizontalLine = "-";
-//        for ( int col = 0; col < numColumns; col++ )
-//        {
-//            for ( int i = 0 ; i < CELL_SIZE ; i++ )
-//            {
-//                horizontalLine += "-";
-//            }            
-//            horizontalLine += "-";
-//        }
-//        
-//        // print the content
-//        for ( int row = 0; row < numRows; row++ ) 
-//        { 
-//            String rowOccupant = "|";
-//            for ( int col = 0; col < numColumns; col++ ) 
-//            {
-//                Square s = squares[row][col];
-//                // create string with piece
-//                String cellOccupant = " " + s.getPieceStringRepresentation();
-//                // pad the output with spaces to a specific size
-//                for ( int i = cellOccupant.length() ; i < CELL_SIZE ; i++ )
-//                {
-//                    cellOccupant += " ";
-//                }
-//                rowOccupant += cellOccupant + "|";
-//            }
-//            output += horizontalLine + "\n";
-//            output += rowOccupant + "\n";
-//        }
-//        output += horizontalLine;
-//        
-//        return output;
-//    }
+    /**
+     * Returns a string with the chessboard pieces for printing to console purposes.
+     * 
+     * @return a string that represents the ChessBoard
+     *//*
+    public String getStringRepresentation()
+    {
+        String output = "";
+        final int CELL_SIZE = 3;
+        
+        // create the horizontal line as a string
+        String horizontalLine = "-";
+        for ( int col = 0; col < numColumns; col++ )
+        {
+            for ( int i = 0 ; i < CELL_SIZE ; i++ )
+            {
+                horizontalLine += "-";
+            }            
+            horizontalLine += "-";
+        }
+        
+        // print the content
+        for ( int row = 0; row < numRows; row++ ) 
+        { 
+            String rowOccupant = "|";
+            for ( int col = 0; col < numColumns; col++ ) 
+            {
+                Square s = squares[row][col];
+                // create string with piece
+                String cellOccupant = " " + s.getPieceStringRepresentation();
+                // pad the output with spaces to a specific size
+                for ( int i = cellOccupant.length() ; i < CELL_SIZE ; i++ )
+                {
+                    cellOccupant += " ";
+                }
+                rowOccupant += cellOccupant + "|";
+            }
+            output += horizontalLine + "\n";
+            output += rowOccupant + "\n";
+        }
+        output += horizontalLine;
+        
+        return output;
+    }*/
     
     /**
      * Builds the ChesssBoard for game play.
