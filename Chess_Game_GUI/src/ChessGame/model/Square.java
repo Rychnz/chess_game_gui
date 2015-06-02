@@ -80,9 +80,9 @@ public class Square {
     }
     
     /**
-     * Gets the current piece in square.
+     * Gets the colour of the current piece in square.
      * 
-     * @return the current piece
+     * @return the current piece's colour
      */
     public Color getOccupyingPieceColor() {
         Piece[] pieceArray = pieces.toArray(new Piece[pieces.size()]);
@@ -90,6 +90,11 @@ public class Square {
         return thisPiece.getPieceColor();
     }
     
+    /**
+     * Gets the current piece in the square.
+     * 
+     * @return the current piece 
+     */
     public Piece getOccupyingPiece() {
         Piece[] pieceArray = pieces.toArray(new Piece[pieces.size()]);
         Piece thisPiece = pieceArray[0];
