@@ -95,14 +95,15 @@ public final class SquareGrid extends javax.swing.JPanel {
 
     private void csPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_csPanelMousePressed
         
-        int rowNo = 0;
+        int rowNo = 1;
         int colNo = 1;
-        int newRowNo = 0;
-        int newColNo = 2;
+        int newRowNo = 2;
+        int newColNo = 1;
         
-        squares = new Square[8][8];
+        
         
         ChessBoard cBoard = chess.getChessBoard();
+        squares = cBoard.getSquareArray();
         
         Position piecePos = new Position(cBoard, rowNo, colNo);
         Piece p = cBoard.getSquare(piecePos).getOccupyingPiece();
