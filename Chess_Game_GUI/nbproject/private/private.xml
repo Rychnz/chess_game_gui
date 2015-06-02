@@ -3,12 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/User%20Files/My%20Documents/AUT/BCIS/Program%20Design%20and%20Construction/GitHub/chess_game_gui/Chess_Game_GUI/src/ChessGame/model/Square.java</file>
-            <file>file:/D:/User%20Files/My%20Documents/AUT/BCIS/Program%20Design%20and%20Construction/GitHub/chess_game_gui/Chess_Game_GUI/src/ChessGame/model/ChessBoard.java</file>
-            <file>file:/D:/User%20Files/My%20Documents/AUT/BCIS/Program%20Design%20and%20Construction/GitHub/chess_game_gui/Chess_Game_GUI/src/ChessGame/main/Main.java</file>
-            <file>file:/D:/User%20Files/My%20Documents/AUT/BCIS/Program%20Design%20and%20Construction/GitHub/chess_game_gui/Chess_Game_GUI/src/ChessGame/gui/SquareGrid.java</file>
-            <file>file:/D:/User%20Files/My%20Documents/AUT/BCIS/Program%20Design%20and%20Construction/GitHub/chess_game_gui/Chess_Game_GUI/src/ChessGame/model/Chess.java</file>
-            <file>file:/D:/User%20Files/My%20Documents/AUT/BCIS/Program%20Design%20and%20Construction/GitHub/chess_game_gui/Chess_Game_GUI/src/ChessGame/gui/ChessBoardUI.java</file>
+            <file>file:/C:/Users/Laz%20Bratton/Documents/GitHub/chess_game_gui/Chess_Game_GUI/Test%20Packages/ChessGame/model/ChessBoardTest.java</file>
+            <file>file:/C:/Users/Laz%20Bratton/Documents/GitHub/chess_game_gui/Chess_Game_GUI/src/ChessGame/model/Position.java</file>
+            <file>file:/C:/Users/Laz%20Bratton/Documents/GitHub/chess_game_gui/Chess_Game_GUI/src/ChessGame/model/Player.java</file>
+            <file>file:/C:/Users/Laz%20Bratton/Documents/GitHub/chess_game_gui/Chess_Game_GUI/src/ChessGame/gui/SquareGrid.java</file>
+            <file>file:/C:/Users/Laz%20Bratton/Documents/GitHub/chess_game_gui/Chess_Game_GUI/src/ChessGame/gui/ChessBoardUI.java</file>
+            <file>file:/C:/Users/Laz%20Bratton/Documents/GitHub/chess_game_gui/Chess_Game_GUI/Test%20Packages/ChessGame/model/ChessTest.java</file>
+            <file>file:/C:/Users/Laz%20Bratton/Documents/GitHub/chess_game_gui/Chess_Game_GUI/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/Laz%20Bratton/Documents/GitHub/chess_game_gui/Chess_Game_GUI/src/ChessGame/gui/HighScoreFrame.java</file>
         </group>
     </open-files>
 </project-private>
