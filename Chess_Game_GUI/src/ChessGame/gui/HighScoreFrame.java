@@ -5,80 +5,18 @@
  */
 package ChessGame.gui;
 
-import java.awt.BorderLayout;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Vector;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.table.AbstractTableModel;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
-
 /**
  *
  * @author Laz Bratton
  */
 public class HighScoreFrame extends javax.swing.JFrame {
+
     /**
      * Creates new form HighScoreFrame
      */
     public HighScoreFrame() {
-        Vector<Object> columnNames = new Vector<Object>();
-        Vector<Object> data = new Vector<Object>();
-        
-        try {            
-            Connection con = DriverManager.getConnection
-                        ("jdbc:derby://localhost:1527/ChessGame");
-                Statement stmt = con.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT * FROM PLAYER WHERE");
-                ResultSetMetaData md = rs.getMetaData();
-                int columns = md.getColumnCount();
-                
-                for(int i = 1; i<=columns; i++)
-                    columnNames.addElement(md.getColumnName(i));
-                while(rs.next()) {
-                    Vector<Object> row = new Vector<Object>(columns);
-                    for(int i = 1; i <= columns; i++) 
-                        row.addElement(rs.getObject(i));
-                    data.addElement(row);
-                }
-                rs.close();
-                stmt.close();
-                con.close();
-        }
-        catch(SQLException e) {
-        
-        }
-        
-        DefaultTableModel model = new DefaultTableModel(data, columnNames) {
-            @Override
-            public Class getColumnClass(int column) {
-                for(int row = 0; row<getRowCount();row++) {
-                    Object o = getValueAt(row, column);
-                    if(o != null) {
-                        return o.getClass();
-                    }
-                }
-                return Object.class;
-            }
-            
-        };
-        
-        JTable table = new JTable(model);
-        JScrollPane scrollPane = new JScrollPane(table);
-        getContentPane().add(scrollPane);
-        
-        JPanel buttonPanel = new JPanel();
-        getContentPane().add(buttonPanel, BorderLayout.SOUTH);
-        
+        initComponents();
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -88,47 +26,51 @@ public class HighScoreFrame extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
+        ChessGamePUEntityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("ChessGamePU").createEntityManager();
+        playerQuery = java.beans.Beans.isDesignTime() ? null : ChessGamePUEntityManager.createQuery("SELECT p FROM Player p");
+        playerList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : playerQuery.getResultList();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jPanel1 = new javax.swing.JPanel();
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 328, Short.MAX_VALUE)
-        );
+        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, playerList, jTable1);
+        org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${name}"));
+        columnBinding.setColumnName("Name");
+        columnBinding.setColumnClass(String.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${score}"));
+        columnBinding.setColumnName("Score");
+        columnBinding.setColumnClass(Integer.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${gamesplayed}"));
+        columnBinding.setColumnName("Games Played");
+        columnBinding.setColumnClass(Integer.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${gameswon}"));
+        columnBinding.setColumnName("Games Won");
+        columnBinding.setColumnClass(Integer.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${gameslost}"));
+        columnBinding.setColumnName("Games Lost");
+        columnBinding.setColumnClass(Integer.class);
+        bindingGroup.addBinding(jTableBinding);
+        jTableBinding.bind();
+        jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)
         );
+
+        bindingGroup.bind();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -137,15 +79,43 @@ public class HighScoreFrame extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-       HighScoreFrame frame = new HighScoreFrame();
-       frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-       frame.pack();
-       frame.setVisible(true);
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(HighScoreFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(HighScoreFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(HighScoreFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(HighScoreFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new HighScoreFrame().setVisible(true);
+            }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
+    private javax.persistence.EntityManager ChessGamePUEntityManager;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private java.util.List<ChessGame.gui.Player> playerList;
+    private javax.persistence.Query playerQuery;
+    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }

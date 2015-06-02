@@ -69,6 +69,11 @@ public class InGameUI extends javax.swing.JFrame {
         jMenu3.setText("Player");
 
         jMenuItem3.setText("Player Statistics");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem3);
 
         jMenuBar1.add(jMenu3);
@@ -92,6 +97,11 @@ public class InGameUI extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        HighScoreFrame hsF = new HighScoreFrame();
+        hsF.setVisible(true);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -123,7 +133,9 @@ public class InGameUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InGameUI().setVisible(true);
+                InGameUI ui = new InGameUI();
+                ui.setVisible(true);
+                ui.setLocationRelativeTo(null);
             }
         });
     }
