@@ -13,11 +13,13 @@ import java.awt.GridLayout;
 
 /**
  *
- * @author Rich
+ * @author Richard Johnston ID 0795795
+ * @version 1.0 - 2015.05: Created
  */
 public class ChessBoardUI extends javax.swing.JFrame {
     
     private Chess chess;
+    ChessBoard board;
     private SquareGrid csSquareGrid;
     
     /**
@@ -30,7 +32,7 @@ public class ChessBoardUI extends javax.swing.JFrame {
         initComponents();
         createChessBoardGrid();
                 
-        csSquareGrid = new SquareGrid(chess, 8, 8);
+        csSquareGrid = new SquareGrid(chess, 0, 0);
         csSquare.add(csSquareGrid);
         
         update();
@@ -51,13 +53,17 @@ public class ChessBoardUI extends javax.swing.JFrame {
     
     private void createChessBoardGrid()
     {
+        board = new ChessBoard();
+        
+        int rows    = board.getNumRows();
+        int columns = board.getNumColumns();
         
         csSquare.removeAll();
-        csSquare.setLayout(new GridLayout(9, 9));
+        csSquare.setLayout(new GridLayout(rows, columns));
         
-        for ( int row = 0; row < 8; row++ )
+        for ( int row = 0; row < rows; row++ )
         {
-            for ( int col = 0; col < 8; col++ )
+            for ( int col = 0; col < columns; col++ )
             {
                 SquareGrid panel = new SquareGrid(chess, row, col);
                 csSquare.add(panel);

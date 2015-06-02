@@ -14,13 +14,12 @@ import java.awt.Color;
 
 /**
  *
- * @author Rich
+ * @author Richard Johnston ID 0795795
+ * @version 1.0 - 2015.05: Created
  */
 public final class SquareGrid extends javax.swing.JPanel {
     
-    private ChessBoard board;
     private Chess chess;
-    //private Square square;
     private Square [][] squares;
     private Position pos;
     private int row;
@@ -42,11 +41,11 @@ public final class SquareGrid extends javax.swing.JPanel {
     public void update()
     {
         Square newSquare = chess.getSquare(row, column);
-        //csLabel.setText("P");
         csLabel.setText(newSquare.getPieceStringRepresentation());
        
-        //csPanel.setBackground(new java.awt.Color(255, 255, 255));
+        csPanel.setBackground(new java.awt.Color(255, 255, 255));
         
+        /*
         for (int i = 0; i < 64; i++) {
 
         int row = (i / 8) % 2;
@@ -54,7 +53,7 @@ public final class SquareGrid extends javax.swing.JPanel {
             csPanel.setBackground( i % 2 == 0 ? Color.white : Color.black );
         else
             csPanel.setBackground( i % 2 == 0 ? Color.black : Color.white );
-        }
+        }*/
     }
 
     /**
@@ -95,18 +94,21 @@ public final class SquareGrid extends javax.swing.JPanel {
     }//GEN-LAST:event_csPanelMouseReleased
 
     private void csPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_csPanelMousePressed
-        int colNo = 0;
-        int rowNo = 1;
-        int newColNo = 0;
-        int newRowNo = 2;
+        
+        int rowNo = 0;
+        int colNo = 1;
+        int newRowNo = 0;
+        int newColNo = 2;
+        
+        squares = new Square[8][8];
         
         ChessBoard cBoard = chess.getChessBoard();
-        //ChessBoard cBoard = new ChessBoard();
         
         Position piecePos = new Position(cBoard, rowNo, colNo);
         Piece p = cBoard.getSquare(piecePos).getOccupyingPiece();
+        System.out.println("Piece: " + p + " | Position: " + piecePos + " | Row: " + rowNo + " | Column: " + colNo + " | cBoard: " + cBoard);
         chess.movePiece(squares[rowNo][colNo], squares[newRowNo][newColNo], p);
-        
+         
         update();
     }//GEN-LAST:event_csPanelMousePressed
 

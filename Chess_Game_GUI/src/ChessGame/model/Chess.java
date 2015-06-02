@@ -134,5 +134,4 @@ public class Chess {
         System.out.println("You have chosen to quit, good bye!");
         
     }*/
-    
 }

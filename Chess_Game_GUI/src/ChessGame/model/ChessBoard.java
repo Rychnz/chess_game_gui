@@ -10,17 +10,17 @@ import java.awt.Color;
 /**
  *
  * @author Richard Johnston ID 0795795 && Lazarus Bratton 
- * 
  * @version 1.0 - 2015.04: Created
  */
 public class ChessBoard {
     
     //Set ChessBoard size to 8x8
-    private final int         numRows = 9;
-    private final int         numColumns = 9;
+    private final int         numRows = 8;
+    private final int         numColumns = 8;
     private Square [][] squares;
     //private Piece piece;
     private Square square;
+    private Chess chess;
     
     /**
      * Default constructor for ChessBoard
