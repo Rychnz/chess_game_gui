@@ -7,6 +7,9 @@ package ChessGame.gui;
 
 import ChessGame.model.ChessBoard;
 import ChessGame.model.Chess;
+import ChessGame.model.Piece;
+import ChessGame.model.Position;
+import ChessGame.model.Square;
 import java.awt.Component;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
@@ -18,9 +21,10 @@ import java.awt.GridLayout;
  */
 public class ChessBoardUI extends javax.swing.JFrame {
     
-    private Chess chess;
-    ChessBoard board;
-    private SquareGrid csSquareGrid;
+    private Chess       chess;
+    private ChessBoard  board;
+    private SquareGrid  csSquareGrid;
+    private Square [][] squares;
     
     /**
      * Creates new form ChessBoardUI
@@ -49,6 +53,24 @@ public class ChessBoardUI extends javax.swing.JFrame {
         }
         
         csSquareGrid.update();
+    }
+    
+    public void movePiece()
+    {
+        int rowNo = 1;
+        int colNo = 1;
+        int newRowNo = 2;
+        int newColNo = 1;
+        
+        ChessBoard cBoard = chess.getChessBoard();
+        squares = cBoard.getSquareArray();
+        
+        Position piecePos = new Position(cBoard, rowNo, colNo);
+        Piece p = cBoard.getSquare(piecePos).getOccupyingPiece();
+        System.out.println("Piece: " + p + " | Position: " + piecePos + " | Row: " + rowNo + " | Column: " + colNo + " | cBoard: " + cBoard);
+        chess.movePiece(squares[rowNo][colNo], squares[newRowNo][newColNo], p);
+ 
+        update();
     }
     
     private void createChessBoardGrid()

@@ -5,12 +5,8 @@
  */
 package ChessGame.gui;
 
-import ChessGame.model.ChessBoard;
 import ChessGame.model.Chess;
-import ChessGame.model.Piece;
-import ChessGame.model.Position;
 import ChessGame.model.Square;
-import java.awt.Color;
 
 /**
  *
@@ -19,9 +15,9 @@ import java.awt.Color;
  */
 public final class SquareGrid extends javax.swing.JPanel {
     
-    private Chess chess;
-    private Square [][] squares;
-    private Position pos;
+    private Chess           chess;
+    private ChessBoardUI    ui;
+    private Square          square;
     private int row;
     private int column;
 
@@ -40,11 +36,12 @@ public final class SquareGrid extends javax.swing.JPanel {
     
     public void update()
     {
-        Square newSquare = chess.getSquare(row, column);
-        csLabel.setText(newSquare.getPieceStringRepresentation());
+        square = chess.getSquare(row, column);
+        csLabel.setText(square.getPieceStringRepresentation());
        
         csPanel.setBackground(new java.awt.Color(255, 255, 255));
         
+        //Create chessboard black/white panel colours
         /*
         for (int i = 0; i < 64; i++) {
 
@@ -70,6 +67,11 @@ public final class SquareGrid extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
+        csPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                csPanelMouseDragged(evt);
+            }
+        });
         csPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 csPanelMousePressed(evt);
@@ -94,24 +96,12 @@ public final class SquareGrid extends javax.swing.JPanel {
     }//GEN-LAST:event_csPanelMouseReleased
 
     private void csPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_csPanelMousePressed
-        
-        int rowNo = 1;
-        int colNo = 1;
-        int newRowNo = 2;
-        int newColNo = 1;
-        
-        
-        
-        ChessBoard cBoard = chess.getChessBoard();
-        squares = cBoard.getSquareArray();
-        
-        Position piecePos = new Position(cBoard, rowNo, colNo);
-        Piece p = cBoard.getSquare(piecePos).getOccupyingPiece();
-        System.out.println("Piece: " + p + " | Position: " + piecePos + " | Row: " + rowNo + " | Column: " + colNo + " | cBoard: " + cBoard);
-        chess.movePiece(squares[rowNo][colNo], squares[newRowNo][newColNo], p);
-         
-        update();
+        ui.movePiece();
     }//GEN-LAST:event_csPanelMousePressed
+
+    private void csPanelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_csPanelMouseDragged
+       // 
+    }//GEN-LAST:event_csPanelMouseDragged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
