@@ -53,7 +53,7 @@ public class Player {
                     }
                     catch(SQLException e) {
                         System.out.println("SQL exception occured" + e);
-                        JOptionPane.showMessageDialog(null, "Sorry, this player already exists, or your name exceeds the character count of 10.");
+                        //JOptionPane.showMessageDialog(null, "Sorry, this player already exists, or your name exceeds the character count of 10.");
                         
                     }
                 }
@@ -61,7 +61,7 @@ public class Player {
         }
         catch(SQLException e) {
             System.out.println("SQL exception occured" + e);
-            //JOptionPane.showMessageDialog(null, "Sorry, this player already exists, or your name exceeds the character count of 10.");
+            JOptionPane.showMessageDialog(null, "Sorry, this player already exists, or your name exceeds the character count of 10.");
             }   
     }
     
@@ -75,25 +75,7 @@ public class Player {
             return "Player does not have a name yet!";
         return playerName;
     }
-    
-//    public Player getPlayer(String name) {
-//        try {
-//            Connection con = DriverManager.getConnection
-//                        ("jdbc:derby://localhost:1527/ChessGame");
-//            Statement stmt = con.createStatement();
-//            ResultSet rs = stmt.executeQuery("SELECT * FROM PLAYER WHERE "
-//                    + "NAME = '" + name + "'");
-//            //Player savedPlayer = new Player(name)
-//            while(rs.next()) {
-//                score = rs.getInt("SCORE");
-//            }
-//            
-//        }
-//        catch(SQLException e) {
-//            System.out.println("SQL exception occured" + e);
-//        }
-//    }
-//    
+     
     /**
      * Sets score of player
      * 
