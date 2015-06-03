@@ -22,6 +22,7 @@ public class InGameUI extends javax.swing.JFrame {
     JMenuItem menuItem;
     JRadioButtonMenuItem rbMenuItem;
     JCheckBoxMenuItem cbMenuItem;
+    
     /**
      * Creates new form InGameUI
      */

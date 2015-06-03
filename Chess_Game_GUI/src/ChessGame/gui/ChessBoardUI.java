@@ -83,9 +83,9 @@ public class ChessBoardUI extends javax.swing.JFrame {
         csSquare.removeAll();
         csSquare.setLayout(new GridLayout(rows, columns));
         
-        for ( int row = 0; row < rows; row++ )
+        for ( int row = 0; row < 8; row++ )
         {
-            for ( int col = 0; col < columns; col++ )
+            for ( int col = 0; col < 8; col++ )
             {
                 SquareGrid panel = new SquareGrid(chess, row, col);
                 csSquare.add(panel);
